@@ -1,0 +1,27 @@
+uuid: 3e031425-a775-4be9-8bfa-92683f9a1910
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - origin
+_core:
+  default_config_hash: a6HxoXsjJAq9fOXHSV9S9eLZnm-Qrws8PEoo57Tb2uc
+id: origin_page_title
+theme: origin
+region: content
+weight: -3
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/user\r\n/user/*\r\n/sitemap"

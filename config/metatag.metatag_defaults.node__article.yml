@@ -1,0 +1,18 @@
+uuid: 39ae6024-c016-4c6c-8e4f-fc3165ce63b6
+langcode: en
+status: true
+dependencies: {  }
+id: node__article
+label: 'Content: Article'
+tags:
+  schema_article_date_modified: '[node:created:html_datetime]'
+  schema_article_date_published: '[node:created:html_datetime]'
+  schema_article_description: '[node:summary]'
+  schema_article_headline: '[node:title]'
+  schema_article_image: 'a:2:{s:5:"@type";s:11:"ImageObject";s:3:"url";s:62:"[node:field_main_image:entity:field_media_image:max_2600x2600]";}'
+  schema_article_is_accessible_for_free: 'True'
+  schema_article_main_entity_of_page: '[current-page:url]/#webpage'
+  schema_article_name: '[node:title]'
+  schema_article_publisher: 'a:2:{s:5:"@type";s:12:"Organization";s:3:"@id";s:23:"[site:url]#organization";}'
+  schema_article_type: BlogPosting
+  schema_web_page_type: ItemPage

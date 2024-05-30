@@ -1,0 +1,21 @@
+uuid: 638b9965-0d70-472c-98c2-efd7bc23e6db
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_other_information
+    - node.type.activity
+_core:
+  default_config_hash: h1yC9p43WT8SrRmGRtHFw2E_tN6OZ_tqG9egzWh9r4E
+id: node.activity.field_other_information
+field_name: field_other_information
+entity_type: node
+bundle: activity
+label: 'Other Information'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

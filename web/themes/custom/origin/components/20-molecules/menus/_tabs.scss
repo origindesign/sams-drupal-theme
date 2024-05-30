@@ -1,0 +1,30 @@
+.block-local-tasks-block {
+    position: fixed;
+    top: calc(var(--header-height) + var(--admin-bar));
+    left: auto;
+    right: 0;
+    width: 12rem;
+    z-index: 10;
+
+    & > .contextual { display: none; }
+
+    ul.tabs {
+        @include reset();
+        li {
+            display: block;
+            a {
+                @include fontsize(10);
+                @include transitions();
+                text-transform: uppercase;
+                color: #fff;
+                display: block;
+                padding: 0.5rem 1rem;
+                text-align: center;
+                background: rgba(0, 0, 0, 0.8);
+                &:hover { background: #000000; }
+            }
+
+        }
+    }
+
+}

@@ -1,0 +1,26 @@
+uuid: 7b67043e-f0a0-4474-a9a8-a90f621b51ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_copy_first_column
+    - filter.format.basic_html
+    - paragraphs.paragraphs_type.single_column_copy
+  module:
+    - text
+_core:
+  default_config_hash: jbAILhvf5AI3wPz7k9jaNxcTWJMKtjreA3toM04vSwQ
+id: paragraph.single_column_copy.field_copy_first_column
+field_name: field_copy_first_column
+entity_type: paragraph
+bundle: single_column_copy
+label: Copy
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text_long

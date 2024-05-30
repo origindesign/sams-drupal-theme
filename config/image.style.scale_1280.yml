@@ -1,0 +1,18 @@
+uuid: ccf6ef86-5002-415f-bd53-94e409ed6ba9
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: UYzdafBdLKmAUWHtw7YkwLIe2ocmN4t8ge0FrzN2a3A
+name: scale_1280
+label: 'Scale 1280'
+effects:
+  7acdf4a0-770a-478f-8d85-c82e2549b744:
+    uuid: 7acdf4a0-770a-478f-8d85-c82e2549b744
+    id: image_scale
+    weight: 1
+    data:
+      width: 1280
+      height: null
+      upscale: false
+pipeline: __default__

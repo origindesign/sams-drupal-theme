@@ -1,0 +1,10 @@
+uuid: 9095aff2-2cbd-4a9c-8b17-8937fab75dbc
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: vRDnBkcAjs3G85GdWJt3PPam0zvyjzqqOgXp4h_0eTI
+name: 'Dining Category'
+vid: dining_category
+description: ''
+weight: 0

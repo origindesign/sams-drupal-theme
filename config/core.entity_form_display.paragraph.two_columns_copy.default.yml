@@ -1,0 +1,53 @@
+uuid: 283b4df7-3762-44e1-b163-019c93707395
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.two_columns_copy.field_column_style
+    - field.field.paragraph.two_columns_copy.field_copy_first_column
+    - field.field.paragraph.two_columns_copy.field_copy_second_column
+    - field.field.paragraph.two_columns_copy.field_heading
+    - paragraphs.paragraphs_type.two_columns_copy
+  module:
+    - text
+_core:
+  default_config_hash: Yll0PpCby-CDlpS60tn1bUquo89CaNewt3Y_q7itHXM
+id: paragraph.two_columns_copy.default
+targetEntityType: paragraph
+bundle: two_columns_copy
+mode: default
+content:
+  field_column_style:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_copy_first_column:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_copy_second_column:
+    type: text_textarea
+    weight: 3
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_heading:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

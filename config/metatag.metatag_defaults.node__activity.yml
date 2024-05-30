@@ -1,0 +1,8 @@
+uuid: 0234e07a-351d-4eec-b2d9-740d96a23849
+langcode: en
+status: true
+dependencies: {  }
+id: node__activity
+label: 'Content: Activity'
+tags:
+  schema_web_page_type: ItemPage

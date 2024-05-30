@@ -1,0 +1,11 @@
+.node--view-mode-teaser {
+
+    &:not(:last-of-type){
+        margin-bottom: $row-gap;
+    }
+
+    .date-detail{
+        flex-basis: 25%;
+    }
+
+}

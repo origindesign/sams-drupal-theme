@@ -1,0 +1,89 @@
+.fs-dropdown {
+
+    .fs-dropdown-selected {
+        @include field();
+        @include fonticonSetup();
+        //@include fonticon("\e903", 2rem, #000, 50%, auto, 1rem, auto, false, true);
+        background: #fff !important;
+        z-index: -1;
+        border: $border !important;
+        padding-right:4rem;
+
+        &:after {
+            display: none;
+        }
+
+    }
+    &.fs-dropdown-open {
+        .fs-dropdown-selected:before {
+            transform: rotate(-180deg);
+            top: 1rem;
+        }
+        .fs-dropdown-options {
+            display: block !important;
+        }
+    }
+    .fs-dropdown-options {
+        border:$border;
+        border-top:none;
+        display: none !important;
+    }
+    .fs-dropdown-item {
+        @include transitions();
+        background: #fff !important;
+        padding: 0.5em 1em;
+        @include hover(){
+            padding-left: 1.5em;
+        }
+        &:first-child { padding-top: 1.5em; }
+        &:last-child { padding-bottom: 1.5em; }
+    }
+
+}
+
+
+// CHECKBOX
+
+.fs-checkbox-label.fs-light {
+    line-height: $checkbox-height;
+}
+.fs-checkbox.fs-light {
+
+    .fs-checkbox-marker {
+        width: $checkbox-height;
+        height: $checkbox-height;
+        border:$border;
+        display: block;
+    }
+    &.fs-checkbox-focus {
+        .fs-checkbox-marker {
+            outline: 2px dotted $color--secondary;
+        }
+    }
+    &:not(.fs-checkbox-disabled) {
+        &:hover {
+            &:not(.fs-checkbox-checked) .fs-checkbox-marker {
+                border: 1px solid $color--secondary !important;
+            }
+        }
+    }
+    .fs-checkbox-flag {
+        &:before {
+            color: $color--secondary !important;
+            border-color: $color--secondary !important;
+            height: 1.5rem;
+            width: 0.8rem;
+            margin: 0.1rem 0 0 0.7rem;
+        }
+    }
+
+    // RADIO
+    &.fs-checkbox-radio {
+        .fs-checkbox-marker {
+            border-radius: 99em;
+        }
+        .fs-checkbox-flag {
+            background: $color--secondary !important;
+        }
+    }
+}

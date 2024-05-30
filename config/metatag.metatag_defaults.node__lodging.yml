@@ -1,0 +1,8 @@
+uuid: 0a81a7ec-d2d3-4a29-9fab-4266d6fc77a7
+langcode: en
+status: true
+dependencies: {  }
+id: node__lodging
+label: 'Content: Lodging'
+tags:
+  schema_web_page_type: ItemPage

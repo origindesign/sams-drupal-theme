@@ -1,0 +1,29 @@
+uuid: c937135c-4eaf-402c-828b-c364100b9bd8
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+_core:
+  default_config_hash: gZI3Pl9H2JU2KQ3HPoR6EEt28XiS4Ekq4BQ-s6UbD4I
+id: paragraph.field_column_style
+field_name: field_column_style
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: columns-narrow-wide
+      label: Narrow/Wide
+    -
+      value: columns-even
+      label: Even
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

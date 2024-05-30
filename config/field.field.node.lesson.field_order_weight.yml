@@ -1,0 +1,24 @@
+uuid: fc3939a9-c9c4-4203-960d-6923ff5275a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_order_weight
+    - node.type.lesson
+  module:
+    - weight
+id: node.lesson.field_order_weight
+field_name: field_order_weight
+entity_type: node
+bundle: lesson
+label: 'Order Weight'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: '0'
+default_value_callback: ''
+settings:
+  range: '200'
+field_type: weight

@@ -1,0 +1,12 @@
+uuid: b63348bd-f10e-47c5-b06b-f6efa437e12d
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: IKqOkWVOoCV8ZiO_nZTI1iCu0I69SfSZ9G98_uQ1L_U
+id: from_library
+label: 'From library'
+icon_uuid: null
+icon_default: null
+description: 'A reusable Content Block from the Paragraphs Library'
+behavior_plugins: {  }

@@ -1,0 +1,463 @@
+<?php
+
+/**
+ * @file
+ * Functions to support the Origin theme.
+ */
+
+
+
+/**
+ * Implements template_preprocess().
+ * @param $variables
+ */
+function origin_preprocess(&$variables) {
+
+
+
+}
+
+
+
+/**
+ * Implements template_preprocess_html().
+ * @param array $variables
+ */
+function origin_preprocess_html(&$variables) {
+
+  // $variables['GTM'] = '';
+
+}
+
+
+
+/**
+ * Implements template_preprocess_page.
+ * @param array $variables
+ */
+function origin_preprocess_page(&$variables) {
+
+  $entityTypeManager = \Drupal::entityTypeManager();
+  $config = \Drupal::config('system.site');
+
+  $variables['site_logo'] = '/'. \Drupal::service('extension.list.theme')->getPath('origin') . '/logo.svg';
+  $variables['site_name'] = $config->get('name');
+  $variables["page_type"] = \Drupal::state()->get('page_type') ?: false;
+
+  // Set is_front variable
+  try {
+    $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
+  }
+  catch (Exception $e) {
+    // If the database is not yet available, set the default value.
+    $variables['is_front'] = FALSE;
+  }
+
+  // If node
+  if (\Drupal::routeMatch()->getRouteName() == 'entity.node.canonical') {
+    $node = \Drupal::request()->attributes->get('node');
+  }
+
+  if(!isset($node) && !\Drupal::routeMatch()->getParameter('node_revision')){
+    // Variable used in page template to force a narrow width
+    $variables['not_node'] = true;
+  }
+
+  // Blocks
+  $blocks = [
+    'origin_main_menu' => 'main_menu',
+    'origin_footer' => 'footer_menu',
+    'social' => 'social_menu',
+    'origin_local_tasks' => 'tabs',
+    'origin_messages' => 'messages',
+  ];
+
+  foreach($blocks as $key => $value){
+    $block = \Drupal\block\Entity\Block::load($key);
+    $variables[$value] = $entityTypeManager->getViewBuilder('block')->view($block);
+  }
+
+
+}
+
+
+
+/**
+ * Implements template_preprocess_node.
+ * @param array $variables
+ */
+function origin_preprocess_node(&$variables) {
+
+  // Define useful variables
+  $node = $variables['node'];
+  $nid = $node->id();
+  $variables['nid'] = $nid;
+  $view_mode = $variables['view_mode'];
+  $variables["type"] = $node->getType();
+  $variables['status'] = $node->isPublished();
+  $variables["created"] = $node->getCreatedTime();
+
+  // Services
+  $entityTypeManager = \Drupal::entityTypeManager();
+
+  // Blocks
+  $drupal_blocks = [
+    'origin_messages' => 'messages',
+  ];
+
+  foreach($drupal_blocks as $key => $value){
+    $block = \Drupal\block\Entity\Block::load($key);
+    $variables[$value] = $entityTypeManager->getViewBuilder('block')->view($block);
+  }
+
+
+  if ($view_mode == "full"){
+
+    // Check if node has a main image
+    $hero_is_displayed = true;
+    if ( isset( $node->field_hide_main_image) ){
+      $hero_is_displayed = ($node->field_hide_main_image->value === "1") ? false : true;
+    }
+    $variables['has_hero_image'] = ((isset($node->field_main_image->entity) || isset($node->field_main_images->entity)) && $hero_is_displayed ) ? true : false;
+
+
+    /* Set includes based on type
+    switch($variables["type"]){
+
+      case '':
+        break;
+
+    }*/
+
+
+    /**
+     * Set includes based on nid
+     *
+     * Set custom component twig files to include using array 'custom_include'
+     * $variables['custom_include'] = [
+    [
+    'path' => '@molecules/blocks/path-to-twig.twig',
+    'class' => 'custom-class',
+    ]
+    ];
+     */
+    switch ($nid){
+
+      // Activities
+      case 2:
+        $controllerName = "ActivityController";
+        $variables['#cache']['tags'][] = 'node_list:activity';
+        break;
+
+      // Events
+      case 3:
+        $controllerName = "EventCalendarController";
+        $variables['#cache']['tags'][] = 'node_list:event';
+        break;
+
+      // Lodging
+      case 4:
+        $controllerName = "LodgingController";
+        $variables['#cache']['tags'][] = 'node_list:lodging';
+        break;
+
+      // Dining
+      case 5:
+        $controllerName = "DiningController";
+        $variables['#cache']['tags'][] = 'node_list:dining';
+        break;
+
+      // Articles
+      case 6:
+        $controllerName = "ArticleController";
+        $param = \Drupal::request()->query->all();
+        $tag = ( isset ($param['tag']) ) ? $param['tag'] : '';
+        $arguments = array('tag' => $tag);
+        $variables['#attached']['library'][] = 'origin/ajaxlist';
+        $variables['#cache']['tags'][] = 'node_list:article';
+        break;
+
+      // Lessons
+      case 7:
+        $controllerName = "LessonController";
+        $variables['#cache']['tags'][] = 'node_list:lesson';
+        break;
+
+      // Lifts and Trails
+      case 8:
+        $controllerName = "LiftsTrailsController";
+        $variables['#cache']['tags'][] = 'node_list:lift_trail';
+        break;
+
+    }
+
+
+    /**
+     * Custom Blocks
+     * $blocks = [
+     *    [
+     *        'name' => 'block-name',
+     *        'class' => 'custom-block-class',
+     *        'inner_class' => 'inner-class'
+     *        'location' => 'above/null'
+     *    ],
+     * ];
+     */
+    if(isset($blocks)){
+      foreach($blocks as $key => $block){
+        $custom_block = \Drupal\block\Entity\Block::load($block['name']);
+        $block['block'] = $entityTypeManager
+          ->getViewBuilder('block')
+          ->view($custom_block);
+
+        // Set block location to above if location: above
+        if(isset($block['location']) && $block['location'] == 'above'){
+          $variables['custom_blocks_above'][$key] = $block;
+
+          // Otherwise to default location: below
+        } else{
+          $variables['custom_blocks'][$key] = $block;
+        }
+      }
+    }
+
+
+    // Set Controller if name is available
+    if( isset($controllerName) ){
+
+      // Instantiate Includer Service
+      $arguments = ( isset ($arguments) ) ? $arguments : array();
+
+      $includer = \Drupal::service('includer.dispatcher');
+      $allIncludes = $includer->dispatch($controllerName, $arguments);
+      // Loop through all includes and pass them into the variables array so they can be used in twig templates
+      foreach($allIncludes as $key => $value){
+        // Only pass it if the value is not false
+        if( $value ){
+          $variables[$key] = $value;
+        }
+      }
+
+    }
+
+
+  }
+
+
+}
+
+
+
+/**
+ * Implements template_preprocess_paragraph.
+ * @param $variables
+ */
+/*function origin_preprocess_paragraph(&$variables) {
+
+  $bundle = $variables['paragraph']->getType();
+
+  switch($bundle){
+
+    case 'image_aside_copy':;
+      break;
+
+  }
+
+}*/
+
+
+
+/**
+ * @param $variables
+ * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+ * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+ */
+function origin_preprocess_field(&$variables){
+
+  $variables['bundle'] = $variables['element']['#bundle'];
+
+  switch($variables['field_name']){
+
+    // Pass rte class to all Rich Text fields
+    case 'body':
+    case 'field_copy_first_column':
+    case 'field_copy_second_column':
+      $variables['extra_classes'] = ['rte'];
+      break;
+
+    // Pass custom links to categories - used for filtering lists
+    case 'field_category':
+      foreach($variables['items'] as $key => $item){
+        $type = $variables['element']['#object']->getType();
+        $tid = $variables['element']['#object']->get('field_category')->getValue()[$key]['target_id'];
+
+        switch($type){
+          case 'article':
+            $term = \Drupal::entityTypeManager()
+              ->getStorage('taxonomy_term')
+              ->load($tid);
+            $url = '/articles?tag='.$term->getName();
+            break;
+          default:
+            $url = '';
+            break;
+        }
+
+        if($url !== ''){
+          $variables['items'][$key]['url'] = $url;
+        }
+
+      }
+      break;
+
+    // Set media as slick carousel
+    case 'field_medias':
+      if(count($variables['items']) > 1){
+        $variables['#attached']['library'][] = 'origin/slick';
+        $variables['extra_classes'] = ['default-carousel', 'slick-carousel'];
+        $variables['slick'] = 'default';
+        $variables['show_count'] = true;
+      }
+      break;
+
+    // Pass tel: url for phone field
+    case 'field_phone':
+      foreach($variables['items'] as $key => $item){
+        $url = 'tel:'.preg_replace('/[^0-9]/', '', $item['content']['#context']['value']);
+        $variables['items'][$key]['url'] = $url;
+      }
+      break;
+
+    // Set default element for heading fields as H2
+    case 'field_heading':
+      foreach($variables['items'] as $key => $item){
+        $variables['items'][$key]['element'] = 'h2';
+      }
+      break;
+
+    // Replace label on date display
+    case 'field_date_recur':
+      foreach($variables['items'] as $key => $item){
+        $node = $variables['element']['#object'];
+        $type = $node->getType();
+
+        if($type == 'event' && isset($item['content']['#upcoming_display']['#items'][0])){
+          $variables['label'] = 'Next Date';
+        } else {
+          $variables['label'] = 'Date';
+        }
+
+      }
+      break;
+
+    // Append paragraph type based class to all field-items within field_paragraphs. Used for styling
+    case 'field_paragraphs':
+      $variables['extra_classes'] = ['relative', 'row'];
+      foreach ($variables['items'] as $key => $item) {
+        if (isset($item['content']['#paragraph'])) {
+          $thisPara = $item['content']['#paragraph'];
+          $bundle = str_replace('_', '-', $thisPara->getType());
+          $variables['items'][$key]['extra_classes'] = ['row', 'paragraph-' . $bundle];
+        }
+      }
+      break;
+
+  }
+
+}
+
+
+
+/** Preprocess responsive image to add attributes for LazySizes Parent Fit plugin
+ * @param $variables
+ */
+function origin_preprocess_responsive_image(&$variables) {
+
+  $files = \Drupal::entityTypeManager()
+    ->getStorage('file')
+    ->loadByProperties(['uri' => $variables['uri']]);
+  $file = reset($files) ?: NULL;
+
+  $crop = \Drupal::service('focal_point.manager')->getCropEntity($file, 'focal_point');
+  if ($crop) {
+    $focal_point = $crop->position();
+    $x = ($focal_point['x']/$variables['width'])*100;
+    $y = ($focal_point['y']/$variables['height'])*100;
+    $variables['img_element']['#attributes']['data-x'] = $x;
+    $variables['img_element']['#attributes']['data-y'] = $y;
+    $css_var = '--focal-point: ' . $x . '% ' . $y . '%;';
+    $aspect = $variables['height']/$variables['width'];
+    $css_var .= '--intrinsic: '. $aspect;
+    $variables['img_element']['#attributes']['style'] = $css_var;
+  }
+
+  $variables['img_element']['#attributes']['data-aspectratio'] = strval($variables['width']/$variables['height']);
+  $variables['img_element']['#attributes']['data-parent-fit'] = 'cover';
+  $variables['img_element']['#attributes']['width'] = $variables['width'];
+  $variables['img_element']['#attributes']['height'] = $variables['height'];
+
+}
+
+
+
+/**
+ * Implements hook_page_attachments_HOOK_alter().
+ * @param array $page
+ */
+function origin_page_attachments_alter(array &$page) {
+
+  $viewport = array(
+    '#type' => 'html_tag',
+    '#tag' => 'meta',
+    '#attributes' => array(
+      'name' => 'viewport',
+      'content' => 'width=device-width, initial-scale=1',
+    ),
+  );
+  $page['#attached']['html_head'][] = [$viewport, 'viewport'];
+
+}
+
+
+
+/**
+ *  Change layout of html to have no wrappers when on ajax call
+ *
+ */
+function origin_theme_suggestions_html_alter(array &$suggestions, array $variables) {
+
+  // Ajax calls
+  if (isset($_GET['response_type'])) {
+    if ( $_GET['response_type'] === 'ajax' ){
+      $suggestions[] = 'html__ajax';
+    }
+  }
+
+  // Event calendar
+  if(strpos(\Drupal::service('path.current')->getPath(), 'ajax-event-calendar') !== false){
+    $suggestions[] = 'html__ajax';
+  }
+
+}
+
+
+
+/**
+ *  Change layout of page to have no wrappers when on ajax call
+ *
+ */
+function origin_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+
+  // Ajax calls
+  if (isset($_GET['response_type'])) {
+    if ( $_GET['response_type'] === 'ajax' ){
+      $suggestions[] = 'page__ajax';
+    }
+  }
+
+  // Event calendar
+  if(strpos(\Drupal::service('path.current')->getPath(), 'ajax-event-calendar') !== false){
+    $suggestions[] = 'page__ajax';
+  }
+
+}

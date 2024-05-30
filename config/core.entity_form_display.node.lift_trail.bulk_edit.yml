@@ -1,0 +1,44 @@
+uuid: 8cfcd09a-970f-4083-bd0b-e51bca0a135c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.node.bulk_edit
+    - field.field.node.lift_trail.field_condition
+    - field.field.node.lift_trail.field_level
+    - field.field.node.lift_trail.field_status
+    - field.field.node.lift_trail.field_type
+    - node.type.lift_trail
+_core:
+  default_config_hash: FN78Je8-pzhhWoKeZLGi9IAGIVsN1omf505evpm4uA0
+id: node.lift_trail.bulk_edit
+targetEntityType: node
+bundle: lift_trail
+mode: bulk_edit
+content:
+  field_condition:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_status:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_level: true
+  field_type: true
+  path: true
+  promote: true
+  publish_on: true
+  scheduler_settings: true
+  status: true
+  sticky: true
+  title: true
+  uid: true
+  unpublish_on: true
+  url_redirects: true

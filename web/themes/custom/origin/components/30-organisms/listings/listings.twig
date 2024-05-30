@@ -1,0 +1,29 @@
+{% if listing_simple  %}
+    {% embed "@organisms/listings/listing.twig"
+    with {
+    "content": listing_simple,
+    "additional_classes": additional_classes
+    }
+    %}
+    {% endembed %}
+{% endif %}
+
+
+{% if listing_isotope  %}
+    {% embed "@organisms/listings/listing-isotope.twig"
+    with {
+    "content": listing_isotope,
+    "additional_classes": additional_classes
+    }
+    %}{% endembed %}
+{% endif %}
+
+
+{% if listing_ajax  %}
+    {% embed "@organisms/listings/listing-ajax.twig"
+    with {
+    "content": listing_ajax,
+    "additional_classes": additional_classes
+    }
+    %}{% endembed %}
+{% endif %}

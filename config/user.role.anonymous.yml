@@ -1,0 +1,20 @@
+uuid: 0a85168e-8783-4a8b-833f-e1a55689eabf
+langcode: en
+status: true
+dependencies:
+  module:
+    - config_pages
+    - media
+    - sitemap
+    - system
+_core:
+  default_config_hash: pq_mEIu_B4widZN7Ap81iCJSjShFFdcL0jEiCi8VrDk
+id: anonymous
+label: 'Anonymous user'
+weight: 0
+is_admin: false
+permissions:
+  - 'access content'
+  - 'access sitemap'
+  - 'view config_pages entity'
+  - 'view media'

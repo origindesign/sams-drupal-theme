@@ -1,0 +1,10 @@
+uuid: 5b5a275d-40ad-46b3-b7af-8863d7573e4b
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: HidM-qPqd3uSq8UcVoGBdRfi-2hJvGwYOpO8u34-SR0
+name: Status
+vid: status
+description: ''
+weight: 0

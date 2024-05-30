@@ -1,0 +1,61 @@
+uuid: 3fc7f385-84a4-4409-847c-83babc808781
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_content
+    - paragraphs.paragraphs_type.card
+    - paragraphs.paragraphs_type.custom_cards
+  module:
+    - entity_reference_revisions
+id: paragraph.custom_cards.field_content
+field_name: field_content
+entity_type: paragraph
+bundle: custom_cards
+label: Content
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      card: card
+    negate: 0
+    target_bundles_drag_drop:
+      card:
+        weight: 12
+        enabled: true
+      content_cards:
+        weight: 13
+        enabled: false
+      content_teasers:
+        weight: 14
+        enabled: false
+      custom_cards:
+        weight: 15
+        enabled: false
+      form:
+        weight: 16
+        enabled: false
+      from_library:
+        weight: 17
+        enabled: false
+      image_aside_copy:
+        weight: 18
+        enabled: false
+      media_slideshow:
+        weight: 19
+        enabled: false
+      quote:
+        weight: 20
+        enabled: false
+      single_column_copy:
+        weight: 21
+        enabled: false
+      two_columns_copy:
+        weight: 22
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,42 @@
+uuid: b15e1b2f-0645-47fb-ad7d-3d4d46663d5e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.form.field_copy_first_column
+    - field.field.paragraph.form.field_form
+    - field.field.paragraph.form.field_heading
+    - paragraphs.paragraphs_type.form
+  module:
+    - text
+    - webform
+id: paragraph.form.default
+targetEntityType: paragraph
+bundle: form
+mode: default
+content:
+  field_copy_first_column:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_form:
+    type: webform_entity_reference_entity_view
+    label: hidden
+    settings:
+      source_entity: false
+      lazy: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

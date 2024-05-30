@@ -1,0 +1,23 @@
+uuid: 81b59c22-34c8-46d3-8e34-ced1cea6d7a5
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: CvbhCl7-_OcU4CQtKTQKEC7vYrAg3uMvtFBX3PxweHM
+id: media.field_credit
+field_name: field_credit
+entity_type: media
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

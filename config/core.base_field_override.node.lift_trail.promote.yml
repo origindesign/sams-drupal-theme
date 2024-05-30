@@ -1,0 +1,24 @@
+uuid: 8f65ce24-a6c8-4353-b897-dd7e34b03356
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.lift_trail
+_core:
+  default_config_hash: o1PxuuGjNwT3xpuZhWoWqFQGbzLOIZOWbRvWECvlwCc
+id: node.lift_trail.promote
+field_name: promote
+entity_type: node
+bundle: lift_trail
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

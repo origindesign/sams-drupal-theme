@@ -1,0 +1,10 @@
+uuid: 6eef0088-e606-43ce-94c3-3b78b98d3fb1
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: hFLSOtY89sQFHex6m4bgMXFdcuJvbnrNmDyL0f519fQ
+name: 'Activity Category'
+vid: activity_category
+description: ''
+weight: 0

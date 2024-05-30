@@ -1,0 +1,27 @@
+uuid: 4c941a83-7482-4cda-83d3-c0a1858b4f15
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_content
+    - node.type.lodging
+_core:
+  default_config_hash: lf1laQDwZ5-X3ibQuN60k3hUAFcxN0m3s_fyMovPIyE
+id: node.lodging.field_related_content
+field_name: field_related_content
+entity_type: node
+bundle: lodging
+label: 'Related Content'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: entity_references
+      display_name: related_content
+      arguments: {  }
+field_type: entity_reference

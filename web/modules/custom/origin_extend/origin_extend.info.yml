@@ -1,0 +1,6 @@
+name: 'Origin Extend'
+type: module
+description: 'Module extending others with specifics to this site'
+package: Custom
+version: '1.0'
+core_version_requirement: ^9.2 || ^10

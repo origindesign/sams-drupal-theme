@@ -1,0 +1,5 @@
+.messages{
+    @include fontsize();
+    @include maxWidth();
+    margin:4rem auto;
+}

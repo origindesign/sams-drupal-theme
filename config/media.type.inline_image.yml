@@ -1,0 +1,15 @@
+uuid: c4900fb8-1ac4-4817-b9c0-80007f797107
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 0Ht3Xx79BnjjRi_7FMBf5ms4Jr_lYfSs6YbPjZJ0KxE
+id: inline_image
+label: 'Inline Image'
+description: ''
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image_1
+field_map: {  }

@@ -1,0 +1,40 @@
+# docs: https://github.com/sasstools/sass-lint
+# rules: https://github.com/sasstools/sass-lint/tree/master/docs/rules
+# Get the default of this file which will contain any new rules: https://github.com/sasstools/sass-lint/blob/master/docs/sass-lint.yml
+
+files:
+  include:
+    - 'scss/**/*.scss'
+    - 'components/**/*.scss'
+  ignore:
+    - 'scss/**/*tmp*.*'
+options:
+  formatter: stylish
+  merge-default-rules: false
+rules:
+  indentation:
+    - 1
+    - size: 4
+  no-css-comments: 0
+  no-duplicate-properties:
+    - 1
+    -
+      exclude:
+        - src
+        - font-size
+        - max-width
+  no-empty-rulesets: 1
+  no-extends: 1
+  no-misspelled-properties:
+    - 1
+    - extra-properties: ["gap", "column-gap", "row-gap", "aspect-ratio"]
+  placeholder-in-extend: 2
+  space-before-bang:
+    - 1
+    - include: true
+  space-between-parens:
+    - 1
+    - include: false
+  trailing-semicolon: 1
+  url-quotes: 1
+  zero-unit: 1

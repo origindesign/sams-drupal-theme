@@ -1,0 +1,25 @@
+uuid: 48a7a2a5-7416-45b4-8154-132c7af6a008
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hide_main_image
+    - node.type.page
+_core:
+  default_config_hash: Mg3NgAnXeeEeWnlvdjuy0LqUU8hWV_Ufjv2QTUW15UU
+id: node.page.field_hide_main_image
+field_name: field_hide_main_image
+entity_type: node
+bundle: page
+label: 'Hide Main Image in Full View'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

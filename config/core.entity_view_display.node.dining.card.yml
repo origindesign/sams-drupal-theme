@@ -1,0 +1,85 @@
+uuid: 8d26a8f8-7583-4cef-8167-b04810f44dc2
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - field.field.node.dining.body
+    - field.field.node.dining.field_address
+    - field.field.node.dining.field_category
+    - field.field.node.dining.field_email
+    - field.field.node.dining.field_google_map_embed
+    - field.field.node.dining.field_main_image
+    - field.field.node.dining.field_metatags
+    - field.field.node.dining.field_order_weight
+    - field.field.node.dining.field_other_information
+    - field.field.node.dining.field_paragraphs
+    - field.field.node.dining.field_phone
+    - field.field.node.dining.field_related_content
+    - field.field.node.dining.field_related_content_heading
+    - field.field.node.dining.field_subtitle
+    - field.field.node.dining.field_website
+    - node.type.dining
+  module:
+    - smart_trim
+    - user
+_core:
+  default_config_hash: sm4_K_Oj6KWicXfjt7NboA_p_ckLIwKCRDDQkXzMf7w
+id: node.dining.card
+targetEntityType: node
+bundle: dining
+mode: card
+content:
+  body:
+    type: smart_trim
+    label: hidden
+    settings:
+      trim_length: 250
+      trim_type: chars
+      trim_suffix: ...
+      wrap_output: false
+      wrap_class: trimmed
+      more:
+        display_link: false
+        target_blank: false
+        link_trim_only: false
+        class: more-link
+        text: More
+        aria_label: 'Read more about [node:title]'
+      summary_handler: full
+      trim_options:
+        text: true
+        trim_zero: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_category:
+    type: entity_reference_entity_id
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_main_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_address: true
+  field_email: true
+  field_google_map_embed: true
+  field_metatags: true
+  field_order_weight: true
+  field_other_information: true
+  field_paragraphs: true
+  field_phone: true
+  field_related_content: true
+  field_related_content_heading: true
+  field_subtitle: true
+  field_website: true
+  links: true

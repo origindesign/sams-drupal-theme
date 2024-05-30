@@ -1,0 +1,18 @@
+uuid: ca226457-efc2-4e43-93f3-d41978081a66
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: FiYrxUHtI_yrRLh8t7Nr7bBuCxcUXTvMIhlf4fTZgVE
+name: scale_480
+label: 'Scale 480'
+effects:
+  534c1a24-2baa-4132-bb0b-0d28ac392365:
+    uuid: 534c1a24-2baa-4132-bb0b-0d28ac392365
+    id: image_scale
+    weight: 1
+    data:
+      width: 480
+      height: null
+      upscale: false
+pipeline: __default__

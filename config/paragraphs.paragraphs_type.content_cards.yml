@@ -1,0 +1,15 @@
+uuid: 74ec28ac-96a4-4355-aae6-25c2a0df8b4f
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs_library
+third_party_settings:
+  paragraphs_library:
+    allow_library_conversion: true
+id: content_cards
+label: 'Content Cards'
+icon_uuid: null
+icon_default: null
+description: "A referenced list of existing content to be displayed using the 'card' layout"
+behavior_plugins: {  }

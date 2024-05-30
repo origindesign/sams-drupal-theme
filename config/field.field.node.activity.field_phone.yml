@@ -1,0 +1,21 @@
+uuid: 20c4e6c2-ebcf-4a53-a0cc-b398c39826b2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_phone
+    - node.type.activity
+_core:
+  default_config_hash: Vl5DbMULY1arnOZliZpOO7h3LlPeZATE9UYC6ODR9Ks
+id: node.activity.field_phone
+field_name: field_phone
+entity_type: node
+bundle: activity
+label: Phone
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

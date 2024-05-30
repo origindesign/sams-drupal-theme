@@ -1,0 +1,50 @@
+name: sdt
+recipe: pantheon
+config:
+  framework: drupal8
+  site: sams-drupal-theme
+  id: 0873cef7-4480-45f1-a217-dbf0ef3358b2
+  edge: false
+  #cache: false
+services:
+  database:
+    type: mariadb:10.3
+  pma:
+    type: phpmyadmin
+    hosts:
+      - database
+  node:
+    type: node:14
+    globals:
+      gulp-cli: latest
+      yarn: latest
+proxy:
+  pma:
+    - pma-sdt.lndo.site
+tooling:
+  push:
+    description: Push only database to dev
+    options:
+      code:
+        default: none
+      files:
+        default: none
+      database:
+        default: dev
+  pull:
+    description: Pull only database
+    options:
+      code:
+        default: none
+      files:
+        default: none
+      database:
+        default: live
+  npm:
+    service: node
+  node:
+    service: node
+  gulp:
+    service: node
+  yarn:
+    service: node

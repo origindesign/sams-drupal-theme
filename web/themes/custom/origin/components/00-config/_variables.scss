@@ -1,0 +1,33 @@
+
+:root{
+    --header-height: #{$header-height-small};
+    --row-spacing: #{$row-spacing-small};
+    --page-margin: #{$small-screen-padding};
+    --column-gap: #{$column-gap-small};
+    --aspect-ratio: #{$base-image-padding};
+    --admin-bar: #{$admin-bar};
+
+    body:not(.user-logged-in){
+        --admin-bar: 0 !important;
+    }
+
+    @include breakpoint($bp--tablet-portrait){
+        --row-spacing: #{$row-spacing-medium};
+        --page-margin: #{$medium-screen-padding};
+        --column-gap: #{$column-gap-medium};
+    }
+
+    @include breakpoint($bp--tablet-landscape){
+        .toolbar-tray-open{
+            --admin-bar: #{$admin-bar-open};
+        }
+    }
+
+    @include breakpoint($bp--large){
+        --header-height: #{$header-height};
+        --row-spacing: #{$row-spacing};
+        --page-margin: #{$large-screen-padding};
+        --column-gap: #{$column-gap};
+    }
+
+}

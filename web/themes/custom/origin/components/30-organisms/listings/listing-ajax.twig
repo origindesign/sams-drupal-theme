@@ -1,0 +1,18 @@
+
+<div class="row listing ajax {{ additional_classes }} {% if not filter_ajax %} no-filters {% endif %}">
+
+    {% if listing_heading %}
+        {{ listing_heading|raw }}
+    {% endif %}
+
+    {% if filters %}
+        <div class="row filters-wrap filter-ajax">
+            {{ filters }}
+        </div>
+    {% endif %}
+
+    <div class="content {{ content_classes }}" aria-live="polite" aria-atomic="true">
+        {{ content }}
+    </div>
+
+</div>

@@ -1,0 +1,23 @@
+uuid: a967031d-409e-4ef7-b960-e20792b336fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_accordion
+    - paragraphs.paragraphs_type.single_column_copy
+id: paragraph.single_column_copy.field_accordion
+field_name: field_accordion
+entity_type: paragraph
+bundle: single_column_copy
+label: Accordion
+description: 'Create an FAQ style list. Enter headings as H3 tags.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,8 @@
+uuid: c11604e1-89a1-476f-b66b-221c959f10aa
+langcode: en
+status: true
+dependencies: {  }
+id: node__dining
+label: 'Content: Dining'
+tags:
+  schema_web_page_type: ItemPage

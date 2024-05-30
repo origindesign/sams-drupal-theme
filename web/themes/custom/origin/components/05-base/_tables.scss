@@ -1,0 +1,28 @@
+
+table{
+    @include tables();
+}
+
+.table-wrap{
+    margin:$base-typography-spacing 0; position:relative;
+
+    &.scroll{
+        overflow-x:auto; overflow-y:hidden;
+        @include breakpoint($bp--phone){
+            margin-right: #{$small-screen-padding * -0.95};
+        }
+        @include breakpoint($bp--tablet-portrait-only){
+            margin-right: #{$medium-screen-padding * -0.95};
+        }
+    }
+
+}
+
+.scroll-indicator{
+    padding-right: 1.5em; display:none;
+
+    &:not([style*="none"]) + .table-wrap{
+        margin-top:0;
+    }
+
+}

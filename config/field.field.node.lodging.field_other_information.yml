@@ -1,0 +1,21 @@
+uuid: 30ea275f-611a-4ec3-8337-d78c4da2c70b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_other_information
+    - node.type.lodging
+_core:
+  default_config_hash: k9GaHcz0FAY9BIo1VARJbEqZwVRqjhZ84GbRfthJWXk
+id: node.lodging.field_other_information
+field_name: field_other_information
+entity_type: node
+bundle: lodging
+label: 'Other Information'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

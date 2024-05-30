@@ -1,0 +1,56 @@
+{% set extraClasses = [] %}
+
+{% if content.field_category|render %}
+    {% set extraClasses = extraClasses|merge(termsToClasses(content.field_category|field_value)) %}
+{% endif %}
+{% if content.field_category_2|render %}
+    {% set extraClasses = extraClasses|merge(termsToClasses(content.field_category_2|field_value)) %}
+{% endif %}
+
+{%
+    set classes = [
+        'node',
+        'node--type-' ~ node.bundle|clean_class,
+        node.isPromoted() ? 'node--promoted',
+        node.isSticky() ? 'node--sticky',
+        not node.isPublished() ? 'node--unpublished',
+        view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+        'iso-item hide-credit'
+    ]
+%}
+
+<{{ element ?: "article" }} {{ attributes.addClass(classes).addClass(extraClasses) }}>
+
+    {{ title_suffix }}
+
+    {% if content.field_main_image|render %}
+        <a href="{{ url }}" class="image" tabindex="-1" aria-hidden="true">
+            {{ content.field_main_image }}
+        </a>
+    {% endif %}
+
+    <div class="copy">
+
+        <h3>
+            <a class="d-block" href="{{ url }}">{{ label|field_value }}</a>
+        </h3>
+
+        {{ content.body }}
+
+        {% if type == 'lesson' %}
+
+            {{ content.field_category }}
+            {{ content.field_category_2 }}
+
+        {% endif %}
+
+        <p>
+            <a href="{{ url }}" class="button" tabindex="-1" aria-hidden="true">
+                {{ 'Read More'|t }}
+                <span class="visually-hidden">: {{ label|field_value }}</span>
+            </a>
+        </p>
+
+    </div>
+
+</{{ element ?: "article" }}>

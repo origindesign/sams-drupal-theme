@@ -1,0 +1,18 @@
+uuid: b68e54a7-760c-461c-94f3-a5996aadf544
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: OpmutD5YLaZ4BASdoZt8ZdYDrDsHakU9wAB6A2vNju0
+name: scale_1920
+label: 'Scale 1920'
+effects:
+  dd6d93d0-8d87-4ef7-9775-095a3abbbee3:
+    uuid: dd6d93d0-8d87-4ef7-9775-095a3abbbee3
+    id: image_scale
+    weight: 1
+    data:
+      width: 1920
+      height: null
+      upscale: false
+pipeline: __default__

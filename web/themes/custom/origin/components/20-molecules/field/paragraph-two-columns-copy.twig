@@ -1,0 +1,22 @@
+{%
+    set classes = [
+        'paragraph',
+        'paragraph--type--' ~ paragraph.bundle|clean_class,
+        view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+        not paragraph.isPublished() ? 'paragraph--unpublished',
+        'fade-in container'
+    ]
+%}
+
+
+{% block paragraph %}
+    <div{{ attributes.addClass(classes) }} id="paragraph-{{ paragraph.id() }}">
+
+        {{ content.field_heading }}
+        <div class="two-col-flex">
+            {{ content.field_copy_first_column }}
+            {{ content.field_copy_second_column }}
+        </div>
+
+    </div>
+{% endblock paragraph %}

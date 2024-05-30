@@ -1,0 +1,26 @@
+uuid: 95c976ad-c220-4049-8b4d-60302d2b91ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_copy_first_column
+    - filter.format.basic_html
+    - paragraphs.paragraphs_type.image_aside_copy
+  module:
+    - text
+_core:
+  default_config_hash: moq_RShoKT3CKXcWpmVzEy7FhOgzLVIa78-3_vNkHvw
+id: paragraph.image_aside_copy.field_copy_first_column
+field_name: field_copy_first_column
+entity_type: paragraph
+bundle: image_aside_copy
+label: Copy
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text_long

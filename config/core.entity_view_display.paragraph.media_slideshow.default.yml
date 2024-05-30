@@ -1,0 +1,33 @@
+uuid: 5cc41074-4765-4bd5-b974-65f6c4e75cbc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.media_slideshow.field_heading
+    - field.field.paragraph.media_slideshow.field_medias
+    - paragraphs.paragraphs_type.media_slideshow
+_core:
+  default_config_hash: jFP0X6sU5fnt5DenC-IlqauUfPa_Ylb6cv6SMH533KY
+id: paragraph.media_slideshow.default
+targetEntityType: paragraph
+bundle: media_slideshow
+mode: default
+content:
+  field_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_medias:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: with_details
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

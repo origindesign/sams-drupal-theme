@@ -1,0 +1,22 @@
+uuid: 366ab8ac-0301-4869-9309-46ad181a46cf
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - origin
+_core:
+  default_config_hash: 6LIL8I7ZoBOELols2uqGTAvq2m4RdLDnj7_yL6ax52E
+id: origin_messages
+theme: origin
+region: disabled
+weight: -2
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

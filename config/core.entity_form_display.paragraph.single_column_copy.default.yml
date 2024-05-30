@@ -1,0 +1,52 @@
+uuid: 822d6048-a7c8-4b10-bbd0-5d703af07db1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.single_column_copy.field_accordion
+    - field.field.paragraph.single_column_copy.field_copy_first_column
+    - field.field.paragraph.single_column_copy.field_heading
+    - field.field.paragraph.single_column_copy.field_width
+    - paragraphs.paragraphs_type.single_column_copy
+  module:
+    - text
+_core:
+  default_config_hash: KRhEF-rlV1ecY3_AlZRzZqhZlybHbjpndSkDO88g7o8
+id: paragraph.single_column_copy.default
+targetEntityType: paragraph
+bundle: single_column_copy
+mode: default
+content:
+  field_accordion:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_copy_first_column:
+    type: text_textarea
+    weight: 3
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_heading:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_width:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

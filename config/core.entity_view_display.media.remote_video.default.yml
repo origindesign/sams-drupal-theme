@@ -1,0 +1,60 @@
+uuid: 4401f87e-f819-473c-a0b9-ad82dcdaf7d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.remote_video.field_caption
+    - field.field.media.remote_video.field_media_image
+    - field.field.media.remote_video.field_media_oembed_video
+    - field.field.media.remote_video.field_tags
+    - lazy.settings
+    - media.type.remote_video
+    - responsive_image.styles.auto
+  module:
+    - lazy
+    - media
+    - media_oembed_control
+    - responsive_image
+_core:
+  default_config_hash: gUaDZKMQD3lmLKWPn727X3JHVdKJ525g4EJCCcDVAqk
+id: media.remote_video.default
+targetEntityType: media
+bundle: remote_video
+mode: default
+content:
+  field_caption:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_media_image:
+    type: lazy_responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: auto
+      image_link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_media_oembed_video:
+    type: oembed
+    label: hidden
+    settings:
+      max_width: 0
+      max_height: 0
+      loading:
+        attribute: eager
+    third_party_settings:
+      media_oembed_control:
+        video_autoplay: '1'
+        video_background: 0
+    weight: 1
+    region: content
+hidden:
+  created: true
+  field_tags: true
+  name: true
+  thumbnail: true
+  uid: true

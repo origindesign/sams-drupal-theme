@@ -1,0 +1,30 @@
+uuid: d7294ff3-76fd-46e1-8759-2f96054b20b1
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.lift_trail.field_condition
+    - field.field.node.lift_trail.field_level
+    - field.field.node.lift_trail.field_status
+    - field.field.node.lift_trail.field_type
+    - node.type.lift_trail
+  module:
+    - user
+_core:
+  default_config_hash: jgk2zScsry7T-Q83WJh2rxxtsxOzc0Gf9OSF0fGzotE
+id: node.lift_trail.teaser
+targetEntityType: node
+bundle: lift_trail
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_condition: true
+  field_level: true
+  field_status: true
+  field_type: true

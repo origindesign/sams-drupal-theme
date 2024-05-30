@@ -1,0 +1,21 @@
+uuid: a03ffe7b-6ff2-4269-93ce-b7108d2d3f12
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_other_information
+    - node.type.lesson
+_core:
+  default_config_hash: Frjl_AvOENxpc3MYkMu8JHdufblk7aiSGy7P2XP4F_I
+id: node.lesson.field_other_information
+field_name: field_other_information
+entity_type: node
+bundle: lesson
+label: 'Other Information'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

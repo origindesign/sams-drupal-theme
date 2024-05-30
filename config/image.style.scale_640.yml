@@ -1,0 +1,18 @@
+uuid: eb09873e-5724-43f5-bdbe-c83b556f55f1
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: rcu4LMCCSKxZEoDvLpCeNHizMkC_XCuMBqyPkfWHsuI
+name: scale_640
+label: 'Scale 640'
+effects:
+  27773c29-4279-48e1-a195-44a5e83708e2:
+    uuid: 27773c29-4279-48e1-a195-44a5e83708e2
+    id: image_scale
+    weight: 1
+    data:
+      width: 640
+      height: null
+      upscale: false
+pipeline: __default__

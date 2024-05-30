@@ -1,0 +1,26 @@
+uuid: 7e37fb50-370d-4d17-8044-798d86197eef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_copy_first_column
+    - filter.format.basic_html
+    - paragraphs.paragraphs_type.two_columns_copy
+  module:
+    - text
+_core:
+  default_config_hash: dfg3YUbb2ZDFxkCti6qnyr9OABC4i-y4MK818Gxz8Qg
+id: paragraph.two_columns_copy.field_copy_first_column
+field_name: field_copy_first_column
+entity_type: paragraph
+bundle: two_columns_copy
+label: 'Copy First Column'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text_long

@@ -1,0 +1,18 @@
+uuid: 31919e09-b0c7-4e6e-ab0e-3f012fda5c80
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: M9TZe11ja7SdoV7B4XMpxI6G9OhbGzCUDr1ZULkACsA
+name: scale_800
+label: 'Scale 800'
+effects:
+  f8144e01-9248-43be-93eb-3970ee85386b:
+    uuid: f8144e01-9248-43be-93eb-3970ee85386b
+    id: image_scale
+    weight: 1
+    data:
+      width: 800
+      height: null
+      upscale: false
+pipeline: __default__

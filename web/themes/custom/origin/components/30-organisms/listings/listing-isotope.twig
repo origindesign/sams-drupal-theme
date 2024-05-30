@@ -1,0 +1,23 @@
+
+{{ attach_library('origin/isotope') }}
+
+<div class="row listing isotope {{ additional_classes }} {% if not filters %} no-filters {% endif %}">
+
+    {% if filters_links %}
+        <div class="row filters-wrap filter-isotope links">
+            {{ filters_links }}
+        </div>
+    {% endif %}
+
+    {% if filters %}
+        <div class="row filters-wrap filter-isotope select">
+            {{ filters }}
+        </div>
+    {% endif %}
+
+    <div class="content isoGrid {{ content_classes }}">
+        {{ content }}
+        <div class="no-results">{% trans %}There are no results for your selection, please try again.{% endtrans %}</div>
+    </div>
+
+</div>

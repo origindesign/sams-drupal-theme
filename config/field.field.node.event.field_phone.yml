@@ -1,0 +1,21 @@
+uuid: 523e4826-a48e-480e-8e26-8123fb6063ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_phone
+    - node.type.event
+_core:
+  default_config_hash: p-vTbY_PIDklU143l520isQJFk9ZaArdSdoHzQpCQXc
+id: node.event.field_phone
+field_name: field_phone
+entity_type: node
+bundle: event
+label: Phone
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,112 @@
+origin:
+  version: 1.x
+  css:
+    theme:
+      dist/style.css: {}
+  js:
+    https://cdn.jsdelivr.net/npm/jquery-inview@1.1.2/jquery.inview.min.js: { type: external, minified: true }
+    dist/all.min.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/once
+    - core/modernizr
+    - core/loadjs
+
+isotope:
+  version: 1.x
+  js:
+    https://cdn.jsdelivr.net/combine/npm/isotope-layout@3.0.6/dist/isotope.pkgd.min.js,npm/imagesloaded@4.1.4/imagesloaded.pkgd.min.js: { type: external, minified: true }
+    dist/isotope.js: { }
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/once
+    - origin/forms
+    - origin/match_height
+
+ajaxload:
+  version: 1.x
+  js:
+    dist/ajaxload.js: { }
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/once
+    - origin/forms
+
+ajaxlist:
+  version: 1.x
+  js:
+    dist/ajaxlist.js: { }
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/once
+    - origin/ajaxload
+
+ajaxview:
+  version: 1.x
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/datejs/1.0/date.min.js: { type: external, minified: true }
+    dist/ajaxview.js: { }
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/once
+    - origin/forms
+
+events:
+  version: 1.x
+  js:
+    dist/events.js: { }
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/once
+    - origin/ajaxview
+
+slick:
+  version: 1.x
+  js:
+    https://cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/slick.min.js: { type: external, minified: true }
+    dist/slick.js: { }
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/once
+
+match_height:
+  version: 1.x
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js : { type: external, minified: true }
+  dependencies:
+    - core/jquery
+
+forms:
+  version: 1.x
+  js:
+    https://cdn.jsdelivr.net/combine/npm/formstone@1.4.18-1/src/js/core.min.js,npm/formstone@1.4.18-1/src/js/checkbox.min.js,npm/formstone@1.4.18-1/src/js/dropdown.min.js: { type: external, minified: true }
+    dist/forms.js: { }
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - jquery_ui_datepicker/datepicker
+
+video:
+  version: 1.x
+  js:
+    dist/video.js: { }
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/once
+
+accordion:
+  version: 1.x
+  js:
+    dist/accordion.js: { }
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/once

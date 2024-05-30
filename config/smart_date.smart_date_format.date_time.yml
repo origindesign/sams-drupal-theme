@@ -1,0 +1,15 @@
+uuid: d0229902-b537-4a0b-9e6e-586ec922b759
+langcode: en
+status: true
+dependencies: {  }
+id: date_time
+label: 'Date & Time'
+date_format: 'F j, Y'
+time_format: 'g:ia'
+time_hour_format: ga
+allday_label: ''
+separator: ' - '
+join: '&nbsp; &nbsp; &nbsp;'
+ampm_reduce: '1'
+date_first: '1'
+site_time_toggle: '1'

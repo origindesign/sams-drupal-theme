@@ -1,0 +1,18 @@
+uuid: fa435334-518d-425c-af32-68b6fe4ae0dd
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 8qBNnpCwIGKdLUYlKacMSJ3kFUCmwKJ0Gf00KIIku_E
+name: scale_1024
+label: 'Scale 1024'
+effects:
+  2cea32b7-c997-4117-852a-a14cbf8c5a77:
+    uuid: 2cea32b7-c997-4117-852a-a14cbf8c5a77
+    id: image_scale
+    weight: 1
+    data:
+      width: 1024
+      height: null
+      upscale: false
+pipeline: __default__

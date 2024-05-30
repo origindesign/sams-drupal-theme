@@ -1,0 +1,175 @@
+$margin-form-item: $base-typography-spacing;
+$form-field-height: 3em;
+$checkbox-height: 3rem;
+
+@mixin label() {
+    display: block; margin-bottom: 0.5em;
+}
+
+@mixin field() {
+    background: #fff; border:$border; width:100%; padding:0 1em; line-height:$form-field-height; height:$form-field-height; color: $color--secondary;
+}
+
+@mixin required() {
+    &:after {
+        content: " *";
+        color: $color--primary;
+    }
+}
+
+
+form {
+
+    fieldset{
+        @include margin(0);
+        padding: 0; border: none;
+        &.webform-type-fieldset{
+            > legend{
+                @include h4();
+            }
+        }
+    }
+
+    .form-item {
+        margin: $margin-form-item 0; position:relative;
+        @include marginResets();
+    }
+
+    .two-col-flex{
+        &:not(:last-child){
+            margin-bottom: $margin-form-item;
+        }
+        > .form-item{
+            @include breakpoint($bp--tablet-portrait){
+                margin: 0;
+                &:nth-child(odd){
+                    padding-right: $column-gap*0.5;
+                }
+                &:nth-child(even){
+                    padding-left: $column-gap*0.5;
+                }
+            }
+        }
+    }
+
+    input, select, textarea, button{
+        -webkit-appearance:none !important; -webkit-border-radius:0 !important; border-radius:0 !important;
+    }
+
+    input[type="text"], input[type="email"], input[type="password"], input[type="tel"], input[type="number"], select {
+        @include field();
+    }
+
+    .hasDatepicker[type="text"],
+    .form-type-date input{
+        background: url('../images/calendar.svg') calc(100% - 2rem) 50%/3rem auto no-repeat;
+    }
+
+    label, .form-composite legend {
+        @include label();
+        &.form-required{
+            @include required();
+        }
+    }
+
+    label.error{
+        color:#ff0000;
+    }
+
+    textarea {
+        padding: 1em; border:$border; width:100%;
+    }
+
+    button[type="submit"], input[type="submit"] {
+        margin-top: $base-typography-spacing*2; outline-offset:$outline-offset;
+        &:focus{
+            outline:#{$outline} $color--primary;
+        }
+    }
+
+    .form-type-webform-document-file{
+        .file{
+            display: block;
+        }
+        input[name="resume_remove_button"]{
+            @include button();
+        }
+    }
+
+    #edit-actions{
+        button[type="submit"], input[type="submit"] {
+            margin-top: $base-typography-spacing*2;
+        }
+    }
+
+    .form-checkboxes,
+    .form-radios{
+        .form-item {
+            margin: 0.5em 0;
+            width: 100%;
+            @include marginResets();
+        }
+        label{
+            width:auto !important;
+        }
+    }
+
+    .form-radios{
+        &.webform-options-display-side-by-side{
+            display: flex;
+            .form-item{
+                margin: 0; width: auto; white-space: nowrap;
+                &:not(:last-child){
+                    margin-right: 2em;
+                }
+            }
+        }
+    }
+
+    .form-type-checkbox,
+    .form-type-radio{
+        display: flex;
+        align-items: center;
+        label{
+            width:auto !important; margin: 0 0 0 1em;
+        }
+        input{
+            border: $border; width: $checkbox-height; height: $checkbox-height;
+        }
+    }
+    .form-type-radio{
+        white-space: nowrap;
+        input{
+            border-radius: 99em !important;
+        }
+    }
+
+    .description {
+        margin-top: 1em;
+    }
+
+}
+
+
+button[type="submit"], input[type="submit"]{
+    @include button();
+    -webkit-appearance:none !important; -webkit-border-radius:0 !important; border-radius:0 !important;
+
+    &:focus{
+        outline:2px dotted $color--secondary;
+    }
+
+}
+
+button{
+    padding:  0;
+    &.reset{
+        background: none; border: none; width: 100%; text-align: left;
+    }
+}
+
+
+// Google Captcha
+.grecaptcha-badge {
+    visibility: hidden;
+}

@@ -1,0 +1,21 @@
+uuid: 9323cc42-1a3c-4dd5-b12d-00aff6f06919
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_email
+    - node.type.event
+_core:
+  default_config_hash: do4DUnVGJCj5IIML_C_EKWbpyvL0S4c9boFQqrMQg98
+id: node.event.field_email
+field_name: field_email
+entity_type: node
+bundle: event
+label: Email
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

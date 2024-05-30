@@ -1,0 +1,46 @@
+uuid: 10f2859d-9d6f-4ca1-abb6-d2bf59862c6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.dining_category
+  module:
+    - path
+    - text
+id: taxonomy_term.dining_category.default
+targetEntityType: taxonomy_term
+bundle: dining_category
+mode: default
+content:
+  description:
+    type: text_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 100
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  publish_on: true
+  unpublish_on: true

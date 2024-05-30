@@ -1,0 +1,19 @@
+uuid: b7a616fc-8d17-4e59-b2a2-f5fbd01591dc
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+_core:
+  default_config_hash: h7oEZgrHKeEXYZEXijb-n2rsWd4uEZxOFJzZwhFynkc
+name: Dining
+type: dining
+description: 'Use <em>Dining</em> for content such as Bars or Restaurants.'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

@@ -1,0 +1,108 @@
+uuid: d776d1ad-74ff-4656-bc18-2d2a22f34dfa
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.inline
+  module:
+    - editor
+    - lazy
+    - linkit
+    - media
+_core:
+  default_config_hash: P8ddpAIKtawJDi5SzOwCzVnnNYqONewSTJ6Xn0dW_aQ
+name: 'Basic HTML'
+format: basic_html
+weight: 0
+filters:
+  editor_file_reference:
+    id: editor_file_reference
+    provider: editor
+    status: true
+    weight: -47
+    settings: {  }
+  filter_align:
+    id: filter_align
+    provider: filter
+    status: false
+    weight: -42
+    settings: {  }
+  filter_autop:
+    id: filter_autop
+    provider: filter
+    status: true
+    weight: -48
+    settings: {  }
+  filter_caption:
+    id: filter_caption
+    provider: filter
+    status: false
+    weight: -41
+    settings: {  }
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: -49
+    settings:
+      allowed_html: '<br> <p class="t-micetype"> <h3> <h4> <h5> <a class="button ck-anchor" href id target data-entity-type data-entity-uuid data-entity-substitution rel> <cite> <dl> <dt> <dd> <figcaption> <blockquote cite> <img src alt data-entity-type data-entity-uuid data-entity-substitution data-align data-caption width height> <drupal-entity data-* alt title> <div class> <figure class> <iframe src allowfullscreen width height frameborder> <tfoot rowspan colspan> <drupal-media data-align data-caption title data-entity-type data-entity-uuid alt> <strong> <em> <ul> <ol start> <li> <table> <tr> <td rowspan colspan> <th rowspan colspan> <thead> <tbody> <caption>'
+      filter_html_help: false
+      filter_html_nofollow: false
+  filter_html_escape:
+    id: filter_html_escape
+    provider: filter
+    status: false
+    weight: -39
+    settings: {  }
+  filter_html_image_secure:
+    id: filter_html_image_secure
+    provider: filter
+    status: false
+    weight: -40
+    settings: {  }
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: true
+    weight: -46
+    settings: {  }
+  filter_image_lazy_load:
+    id: filter_image_lazy_load
+    provider: filter
+    status: true
+    weight: -44
+    settings: {  }
+  filter_url:
+    id: filter_url
+    provider: filter
+    status: false
+    weight: -38
+    settings:
+      filter_url_length: 72
+  lazy_filter:
+    id: lazy_filter
+    provider: lazy
+    status: false
+    weight: -43
+    settings:
+      image: true
+      iframe: true
+  linkit:
+    id: linkit
+    provider: linkit
+    status: true
+    weight: -50
+    settings:
+      title: true
+  media_embed:
+    id: media_embed
+    provider: media
+    status: true
+    weight: -45
+    settings:
+      default_view_mode: inline
+      allowed_view_modes:
+        inline: inline
+      allowed_media_types:
+        file: file
+        inline_image: inline_image

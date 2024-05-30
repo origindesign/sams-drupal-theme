@@ -1,0 +1,30 @@
+
+.accordion-heading{
+
+    button{
+        --icon-size: 2rem;
+        padding-right: 4em;
+
+        &:before,
+        &:after{
+            width: 0.1rem; height: var(--icon-size); right: 0; left: auto; background: $color--primary;
+        }
+        &:before{
+            top: 50%; transform: translate(calc(var(--icon-size) * -0.5), -50%);
+        }
+        &:after{
+            width: var(--icon-size); height: 0.1rem; top: 50%; transform: translateY(-50%);
+        }
+
+        &[aria-expanded="true"]{
+            &:before{
+                transform: translate(calc(var(--icon-size) * -0.5), -50%) rotate(270deg); opacity: 0;
+            }
+            &:after{
+                transform: translateY(-50%) rotate(180deg);
+            }
+        }
+
+    }
+
+}

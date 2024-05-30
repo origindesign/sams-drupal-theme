@@ -1,0 +1,19 @@
+uuid: e44356ba-327c-49ce-85c1-074f0ed19148
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+_core:
+  default_config_hash: DvBimLubSQBRUOQyNzcRP2MBJ10F27gm_UqkLVJDu78
+name: Lodging
+type: lodging
+description: 'Use <em>Lodging</em> to add new items on the Lodging Finder.'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

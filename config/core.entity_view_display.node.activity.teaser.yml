@@ -1,0 +1,97 @@
+uuid: 8774834e-4916-435e-9159-ea6d8ad53c63
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.activity.body
+    - field.field.node.activity.field_address
+    - field.field.node.activity.field_category
+    - field.field.node.activity.field_email
+    - field.field.node.activity.field_google_map_embed
+    - field.field.node.activity.field_main_image
+    - field.field.node.activity.field_metatags
+    - field.field.node.activity.field_order_weight
+    - field.field.node.activity.field_other_information
+    - field.field.node.activity.field_paragraphs
+    - field.field.node.activity.field_phone
+    - field.field.node.activity.field_related_content
+    - field.field.node.activity.field_related_content_heading
+    - field.field.node.activity.field_subtitle
+    - field.field.node.activity.field_website
+    - node.type.activity
+  module:
+    - smart_trim
+    - user
+_core:
+  default_config_hash: NM4ZRyfKISA8KT_1paj-LVPznmS5oXu8cipF8P-d5Oo
+id: node.activity.teaser
+targetEntityType: node
+bundle: activity
+mode: teaser
+content:
+  body:
+    type: smart_trim
+    label: hidden
+    settings:
+      trim_length: 250
+      trim_type: chars
+      trim_suffix: ...
+      wrap_output: false
+      wrap_class: trimmed
+      more:
+        display_link: false
+        target_blank: false
+        link_trim_only: false
+        class: more-link
+        text: More
+        aria_label: 'Read more about [node:title]'
+      summary_handler: full
+      trim_options:
+        text: true
+        trim_zero: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_category:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_main_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: medium
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_subtitle:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden:
+  field_address: true
+  field_email: true
+  field_google_map_embed: true
+  field_metatags: true
+  field_order_weight: true
+  field_other_information: true
+  field_paragraphs: true
+  field_phone: true
+  field_related_content: true
+  field_related_content_heading: true
+  field_website: true

@@ -1,0 +1,52 @@
+
+{%
+    set classes = [
+        'node',
+        'node--type-' ~ node.bundle|clean_class,
+        node.isPromoted() ? 'node--promoted',
+        node.isSticky() ? 'node--sticky',
+        not node.isPublished() ? 'node--unpublished',
+        view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+        'image-aside-copy align--right hide-caption'
+    ]
+%}
+
+<{{ element ?: "article" }} {{ attributes.addClass(classes) }}>
+
+    {{ title_suffix }}
+
+    {% if content.field_main_image|render %}
+        <a href="{{ url }}" class="image" tabindex="-1" aria-hidden="true">
+            {{ content.field_main_image }}
+        </a>
+    {% else %}
+        <a href="{{ url }}" class="image">
+            {% include "@molecules/media/media-placeholder.twig"
+                with {
+                "src": "/" ~ base_path ~ directory ~ "/images/thumb-placeholder.jpg",
+                "alt": "Placeholder",
+                "style": "medium"
+            }
+            %}
+        </a>
+    {% endif %}
+
+    <div class="copy">
+
+        <h3>
+            <a class="d-block" href="{{ url }}">{{ label|field_value }}</a>
+        </h3>
+
+        {{ content.body }}
+
+        <p>
+            <a href="{{ url }}" class="button" tabindex="-1" aria-hidden="true">
+                {{ 'Read More'|t }}
+                <span class="visually-hidden">: {{ label|field_value }}</span>
+            </a>
+        </p>
+
+    </div>
+
+
+</{{ element ?: "article" }}>

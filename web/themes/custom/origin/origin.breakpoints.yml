@@ -1,0 +1,42 @@
+origin.small:
+  label: small
+  mediaQuery: ''
+  weight: 1
+  multipliers:
+    - 1x
+origin.medium:
+  label: medium
+  mediaQuery: '(min-width: 600px)'
+  weight: 2
+  multipliers:
+    - 1x
+origin.tablet_portrait:
+  label: tablet portrait
+  mediaQuery: '(min-width: 768px)'
+  weight: 3
+  multipliers:
+    - 1x
+origin.tablet_landscape:
+  label: tablet landscape
+  mediaQuery: '(min-width: 1024px)'
+  weight: 4
+  multipliers:
+    - 1x
+origin.large:
+  label: large
+  mediaQuery: '(min-width: 1240px)'
+  weight: 5
+  multipliers:
+    - 1x
+origin.x_large:
+  label: x large
+  mediaQuery: '(min-width: 1920px)'
+  weight: 6
+  multipliers:
+    - 1x
+origin.xx_large:
+  label: xx large
+  mediaQuery: '(min-width: 2500px)'
+  weight: 7
+  multipliers:
+    - 1x

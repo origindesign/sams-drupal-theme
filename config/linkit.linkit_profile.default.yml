@@ -1,0 +1,40 @@
+uuid: 1443b75d-b965-4c07-bb9c-3a101471fa05
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+    - node
+_core:
+  default_config_hash: 5oZ6lV78jDA9LoIRiUlv0_BA6cPEPVQst6SlpYVhXWQ
+label: Default
+id: default
+description: ''
+matchers:
+  beb2c32c-73e5-4312-b666-30fa587b5b67:
+    id: 'entity:node'
+    uuid: beb2c32c-73e5-4312-b666-30fa587b5b67
+    settings:
+      metadata: '[node:title]'
+      bundles: {  }
+      group_by_bundle: true
+      substitution_type: canonical
+      limit: 100
+      include_unpublished: false
+    weight: 0
+  58a65419-d19b-4d47-b380-b813a68b91fa:
+    id: 'entity:file'
+    uuid: 58a65419-d19b-4d47-b380-b813a68b91fa
+    settings:
+      metadata: '[file:name]'
+      bundles: null
+      group_by_bundle: null
+      substitution_type: file
+      limit: 100
+      file_extensions: 'pdf docx xlsx'
+      file_status: 1
+      images:
+        show_dimensions: false
+        show_thumbnail: false
+        thumbnail_image_style: null
+    weight: 0

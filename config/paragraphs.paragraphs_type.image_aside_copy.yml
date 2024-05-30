@@ -1,0 +1,17 @@
+uuid: 83c53000-8658-480a-921b-c981c20105d1
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs_library
+third_party_settings:
+  paragraphs_library:
+    allow_library_conversion: true
+_core:
+  default_config_hash: 1sfEVg4eQaYPsb8-eCyprUc2kYwsZo3RrrUNFYbZDz0
+id: image_aside_copy
+label: 'Image Aside Copy'
+icon_uuid: null
+icon_default: null
+description: 'An image aside a block of copy with heading'
+behavior_plugins: {  }

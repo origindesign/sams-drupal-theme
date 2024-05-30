@@ -1,0 +1,138 @@
+
+@mixin hover(){
+    @media (hover: hover) and (pointer: fine){
+        &:hover {
+            @content;
+        }
+    }
+    &:focus{
+        @content;
+    }
+}
+
+@mixin marginResets($sides: false){
+    &:first-child{
+        @if $sides{
+            margin-left:0;
+        }@else{
+            margin-top:0;
+        }
+    }
+    &:last-child{
+        @if $sides{
+            margin-right:0;
+        }@else{
+            margin-bottom:0;
+        }
+    }
+}
+
+@mixin padding($amount,$direction: side){
+    @if $direction == top{
+        padding-top:$amount; padding-bottom:$amount;
+    }
+    @if $direction == side{
+        padding-left:$amount; padding-right:$amount;
+    }
+}
+
+@mixin margin($amount,$direction: side){
+    @if $direction == top{
+        margin-top:$amount; margin-bottom:$amount;
+    }
+    @if $direction == side{
+        margin-left:$amount; margin-right:$amount;
+    }
+}
+
+@mixin maxWidth($width: $container-max-width, $center: true){
+    @if $center{
+        @include margin(auto,side);
+    }
+    max-width: $width;
+}
+
+@mixin container() {
+    @include margin(var(--page-margin));
+    display: block;
+}
+
+@mixin inner-grid(){
+    position:relative;
+    display: grid;
+    row-gap: $row-gap;
+    column-gap: var(--column-gap);
+    grid-template-rows:auto;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-auto-flow: dense;
+}
+
+@mixin content-container(){
+    grid-column:1/span 12;
+    @include breakpoint($bp--tablet-portrait){
+        grid-column:2/span 10;
+    }
+    @include breakpoint($bp--large-layout){
+        grid-column:3/span 8;
+    }
+    @include breakpoint($bp--large){
+        grid-column: 4/span 6;
+    }
+}
+
+@mixin rowMargin(){
+    margin-top: var(--row-spacing); margin-bottom: var(--row-spacing);
+    @include marginResets();
+}
+
+@mixin rowPadding(){
+    padding-top: var(--row-spacing); padding-bottom: var(--row-spacing);
+}
+
+@mixin verticalCenter(){
+    display:inline-block; position:absolute; left:0; top:50%; width:100%; transform:translateY(-50%);
+}
+
+@mixin horizontalCenter(){
+    position:absolute; left:50%; transform:translateX(-50%);
+}
+
+@mixin absoluteCenter(){
+    position:absolute; top:50%; left:50%; transform:translateX(-50%) translateY(-50%);
+}
+
+@mixin cover(){
+    width:100%; height:100%; position:absolute; top:0; left:0;
+}
+
+@mixin pseudo(){
+    @include cover();
+    display:block; content:'';
+}
+
+@mixin reset(){
+    margin:0; padding:0; list-style: none;
+    li{
+        margin:0; padding:0; list-style: none;
+        &:before{
+            display:none;
+        }
+    }
+}
+
+@mixin visuallyHidden(){
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    overflow-wrap: normal;
+    position: absolute !important;
+    width: 1px;
+}
+
+@mixin aspect-ratio($ratio){
+    --aspect-ratio: #{$ratio};
+    aspect-ratio: calc(1/var(--aspect-ratio));
+    @supports not (aspect-ratio: auto) {
+        padding-bottom: calc(var(--aspect-ratio) * 100%);
+    }
+}

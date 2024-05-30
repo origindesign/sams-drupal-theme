@@ -1,0 +1,28 @@
+uuid: e3c60ec8-0b3e-40e1-a6ed-5d05262f9e43
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - filter.format.basic_html
+    - node.type.lesson
+  module:
+    - text
+_core:
+  default_config_hash: 20JApOw8HAw0EW8BRFTmtgiezAg8lOK_H5RPXbG_034
+id: node.lesson.body
+field_name: body
+entity_type: node
+bundle: lesson
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats:
+    - basic_html
+field_type: text_with_summary

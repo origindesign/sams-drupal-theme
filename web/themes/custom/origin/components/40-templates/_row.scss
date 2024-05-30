@@ -1,0 +1,76 @@
+.node--view-mode-row {
+
+    &.Trail{
+        .cell.title{
+            padding-left:2.5rem;
+        }
+    }
+    &.Lift{
+        .cell.title{
+            width:85%;
+        }
+    }
+
+    .cell{
+        flex: 0 0 100%;
+
+        &.level{
+            @include fonticon('',1.5rem,#000,50%,0,auto,auto,false,true);
+            width:2.5rem; text-indent:-999em; position:absolute; left:0; top:0.9rem;
+
+            &.beginner:before{
+                content:'\e90b'; color:#12aa5f;
+            }
+            &.intermediate:before{
+                content:'\e909'; color:#29abdf;
+            }
+            &.advanced:before{
+                content:'\e90a';
+            }
+            &.expert:before{
+                content:'\e90e';
+            }
+
+        }
+        &.title{
+            flex-basis: 100%;
+            @include breakpoint($bp--tablet-portrait){
+                flex-basis: 70%;
+            }
+        }
+        &.detail,
+        &.status{
+            flex-basis: 50%;
+            @include breakpoint($bp--tablet-portrait){
+                flex-basis: 15%;
+            }
+        }
+        &.status{
+            @include fonticon('',1.5rem,#000,50%,50%,auto,auto,true,true);
+            text-indent:-999em;
+
+            @include breakpoint($bp--phone){
+                margin-left: auto; flex-basis: 3rem;
+            }
+
+            &:before{
+                width:3.5rem;
+            }
+            &.open:before{
+                content:'\e90c'; color:#12aa5f; font-size:1.3rem;
+            }
+            &.closed:before{
+                content:'\e90d'; color:#bd2132;
+            }
+            &.scheduled:before{
+                content:'\e910'; color:$color--primary;
+            }
+            &.on-hold:before{
+                content:'\e90f'; color:#F57723;
+            }
+
+        }
+
+    }
+
+}

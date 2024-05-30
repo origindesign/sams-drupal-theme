@@ -1,0 +1,54 @@
+uuid: 291fe655-273c-4e39-b3f3-1d01d6dedb41
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.row
+    - field.field.node.lift_trail.field_condition
+    - field.field.node.lift_trail.field_level
+    - field.field.node.lift_trail.field_status
+    - field.field.node.lift_trail.field_type
+    - node.type.lift_trail
+  module:
+    - user
+_core:
+  default_config_hash: KO33VDzzJlTSKfuxDQbAU3rDL9GvTS3ui9zfq3Aa0o0
+id: node.lift_trail.row
+targetEntityType: node
+bundle: lift_trail
+mode: row
+content:
+  field_condition:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_level:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_status:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  links: true

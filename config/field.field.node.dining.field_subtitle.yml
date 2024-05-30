@@ -1,0 +1,21 @@
+uuid: d4c70979-c13f-421b-9ffd-56c084453e01
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_subtitle
+    - node.type.dining
+_core:
+  default_config_hash: Jmsr8rRSv83UKAlfxrLLl4jCUikQqWKNZf1FjlLkwug
+id: node.dining.field_subtitle
+field_name: field_subtitle
+entity_type: node
+bundle: dining
+label: Subtitle
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

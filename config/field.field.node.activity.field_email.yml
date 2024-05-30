@@ -1,0 +1,21 @@
+uuid: 23c2e90c-4252-45ae-8139-fc66bb1dae9b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_email
+    - node.type.activity
+_core:
+  default_config_hash: PILIgaOpSc3YKtLSfiKsR8wXXwGMFl3rrf6aQul38DI
+id: node.activity.field_email
+field_name: field_email
+entity_type: node
+bundle: activity
+label: Email
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

@@ -1,0 +1,21 @@
+uuid: 356e59ae-0dd6-49e0-973d-9a2114161f03
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_phone
+    - node.type.lodging
+_core:
+  default_config_hash: LUjGihy9lLOy7XDhfVRY8Iiv4Dk0iLMM6EdMbeDIYQM
+id: node.lodging.field_phone
+field_name: field_phone
+entity_type: node
+bundle: lodging
+label: Phone
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

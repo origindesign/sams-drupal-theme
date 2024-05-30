@@ -1,0 +1,16 @@
+
+<header class="border-bottom bg-background site-header" role="banner">
+    <div class="container d-flex ai-center">
+
+        {% if site_logo %}
+            <a href="/" title="{{ 'Home'|t }}" rel="home" class="logo">
+                {% include '@atoms/images/logo.twig' %}
+            </a>
+        {% endif %}
+
+        <div class="main-menu">
+            {{ main_menu }}
+        </div>
+
+    </div>
+</header>

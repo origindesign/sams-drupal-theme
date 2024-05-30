@@ -1,0 +1,10 @@
+uuid: 56815960-65b5-4ca0-845a-ce0b8ede748f
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 8DU7XRBgds976vZY_ixbriCMy0gHDr2wA5ud7UeY5I0
+name: 'Lifts & Trails Type'
+vid: lifts_trails_type
+description: ''
+weight: 0

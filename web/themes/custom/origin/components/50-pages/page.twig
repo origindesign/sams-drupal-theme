@@ -1,0 +1,33 @@
+<div class="d-flex flex-direction-column layout-container">
+
+    {% include "@organisms/global/header.twig" %}
+
+
+    {{ tabs }}
+
+
+    <main id="main-content" role="main" class="row-padding {% if not_node %}container not-node{% endif %}  main-content">
+
+        <div class="{% if not_node %}inner-grid{% endif %}  layout-content">
+
+            {% if not_node %}
+            <div class="content-container">
+                {{ messages }}
+            {% endif %}
+
+                {% block content %}
+
+                {% endblock %}
+
+            {% if not_node %}
+            </div>
+            {% endif %}
+
+        </div>{# /.layout-content #}
+
+    </main>
+
+    {% include "@organisms/global/footer.twig" %}
+
+
+</div>{# /.layout-container #}

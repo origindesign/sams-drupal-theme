@@ -1,0 +1,13 @@
+uuid: 8b955838-f06c-4f5a-8a18-51625a8584de
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: 0fwsIK-BokgicSD4KwSeXfdcyKWWZ9C2OyJj7HNJ96M
+id: node.preview
+label: Preview
+description: ''
+targetEntityType: node
+cache: true

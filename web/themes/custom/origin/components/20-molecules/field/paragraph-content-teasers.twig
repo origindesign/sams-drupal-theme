@@ -1,0 +1,27 @@
+
+{%
+    set classes = [
+        'paragraph',
+        'paragraph--type--' ~ paragraph.bundle|clean_class,
+        view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+        not paragraph.isPublished() ? 'paragraph--unpublished',
+        'container'
+    ]
+%}
+
+{% block paragraph %}
+    <div{{ attributes.addClass(classes) }} id="paragraph-{{ paragraph.id() }}">
+
+        <h2 class="fade-in">
+            {{ content.field_heading|field_value }}
+        </h2>
+        <div class="content">
+            {% for item in content.field_content_references|field_value %}
+                <div class="row">
+                    {{ item }}
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+{% endblock paragraph %}

@@ -1,0 +1,21 @@
+uuid: d7d55e54-73fa-4569-a25a-3e07d17cc59e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_phone
+    - node.type.dining
+_core:
+  default_config_hash: KI1h2iXN15qsDvLsTKcKrp4IB4ax2rXrNWveDP6Q6ww
+id: node.dining.field_phone
+field_name: field_phone
+entity_type: node
+bundle: dining
+label: Phone
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

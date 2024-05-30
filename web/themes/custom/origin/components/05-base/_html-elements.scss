@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+
+    &:focus{
+        outline:$outline;
+    }
+    &:focus:not(:focus-visible) {
+        outline: none;
+    }
+
+}
+
+html {
+    font-size:62.5%;
+}
+
+body {
+    @include body-copy();
+    color:$color--text; background: #fff;
+}
+
+h1, h2, h3, h4, h5,
+.h1, .h2, .h3, .h4, .h5{
+    @include marginResets();
+}
+h1, .h1 { @include h1(); }
+h2, .h2 { @include h2(); }
+h3, .h3 { @include h3(); }
+h4, .h4 { @include h4(); }
+h5, .h5 { @include h5(); }
+h6, .h6 { @include h6(); }
+
+.rte{
+    @include base-typography();
+}
+
+h3, h4, h5, h6, p{
+    &:empty{
+        display: none;
+    }
+}
+
+a{
+    @include link();
+}
+
+a.image{
+    display:block; outline-offset:$outline-offset;
+}
+
+blockquote {
+    padding:2rem 3rem; margin:$base-typography-spacing 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display:block;
+}
+
+iframe{
+    border: none !important; width: 100% !important;
+}

@@ -1,0 +1,25 @@
+uuid: 5e9749a2-a4f3-4935-b0ed-8e43fafe0acc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_metatags
+    - node.type.lesson
+  module:
+    - metatag
+_core:
+  default_config_hash: dLMu9b7YrQkOjRlAneOcH2BrUsxyxCcVDJTOWH5mvCo
+id: node.lesson.field_metatags
+field_name: field_metatags
+entity_type: node
+bundle: lesson
+label: Metatags
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 'a:0:{}'
+default_value_callback: ''
+settings: {  }
+field_type: metatag

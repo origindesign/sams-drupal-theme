@@ -1,0 +1,25 @@
+uuid: faccd2ed-ee9b-4ab9-b629-4ec9d52bcdf4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_website
+    - node.type.event
+  module:
+    - link
+_core:
+  default_config_hash: xqd_nXnE8DxwwCz4zs3p7q9CODLw2i1WZtdXYTbqyL4
+id: node.event.field_website
+field_name: field_website
+entity_type: node
+bundle: event
+label: Website
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 17
+field_type: link

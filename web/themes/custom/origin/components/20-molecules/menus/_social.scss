@@ -1,0 +1,17 @@
+.menu--social{
+
+    a{
+        $icon-social-size: 2.5rem;
+        @include fonticon('',$icon-social-size, $color--text, 50%, 50%, auto, auto, true, true);
+        width:$icon-social-size; height:$icon-social-size; display: inline-block;
+
+        &[href*='facebook']:before{
+            content:$icon--facebook;
+        }
+        &[href*='instagram']:before{
+            content:$icon--instagram;
+        }
+
+    }
+
+}

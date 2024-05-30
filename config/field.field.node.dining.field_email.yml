@@ -1,0 +1,21 @@
+uuid: 732a09de-cc33-4279-92e4-d71dcf1defce
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_email
+    - node.type.dining
+_core:
+  default_config_hash: Me7ylS9XP9yhQ8FXml84tw5FQYVCrC3SIdBJ3qI162E
+id: node.dining.field_email
+field_name: field_email
+entity_type: node
+bundle: dining
+label: Email
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

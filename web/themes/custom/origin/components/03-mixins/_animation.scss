@@ -1,0 +1,65 @@
+$transition-time-fast: 0.3;
+$transition-time: 0.5;
+$transition-time-slower: 0.8;
+$transition-ease-ui: cubic-bezier(0.645, 0.045, 0.355, 1);
+$transition-ease-soft: ease-in-out;
+$transition-offset-horizontal: 20%;
+$transition-offset-vertical: 2em;
+
+@mixin transitions($what: all, $time: $transition-time-fast, $how: $transition-ease-soft, $delay: 0) {
+    transition: $what #{$time}s $how #{$delay}s;
+}
+
+@mixin transitionUI(){
+    @include transitions(all, $transition-time, $transition-ease-ui);
+}
+
+@mixin transitionVisibility(){
+    transition: opacity #{$transition-time-fast}s $transition-ease-ui, transform #{$transition-time-fast}s $transition-ease-ui, max-height #{$transition-time-fast}s $transition-ease-ui, visibility 0s #{$transition-time-fast}s;
+}
+
+@mixin transitionVisibilityShow(){
+    opacity: 1 !important; visibility: visible !important; transition: opacity #{$transition-time-fast}s $transition-ease-ui, transform #{$transition-time-fast}s $transition-ease-ui, max-height #{$transition-time-fast}s $transition-ease-ui, visibility 0s !important;
+}
+
+@mixin transitionPageElement($time:$transition-time-slower){
+    transition-duration: #{$time}s;
+}
+
+@mixin fadeIn(){
+    @include transitionPageElement();
+    opacity:0;
+    &.in-view{ opacity:1; }
+}
+
+// Loader //
+@keyframes animsition-loading{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}
+
+@mixin loader(){
+    position:relative;
+
+    &:after{
+        @include transitions();
+        content: "\020";
+        width: 3.2rem;
+        height: 3.2rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -16px;
+        border-radius: 50%;
+        z-index: 2;
+
+        background-color: transparent;
+        border-top: 5px solid rgba(0,0,0,.2);
+        border-right: 5px solid rgba(0,0,0,.2);
+        border-bottom: 5px solid rgba(0,0,0,.2);
+        border-left: 5px solid #eee;
+        transform: translateZ(0) translateX(-50%) translateY(-50%);
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-duration: .8s;
+        animation-name: animsition-loading;
+    }
+
+}

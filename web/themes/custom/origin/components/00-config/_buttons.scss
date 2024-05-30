@@ -1,0 +1,43 @@
+
+@mixin link(){
+    @include transitions();
+    text-decoration:none;
+
+    @include hover(){
+        color:$color--text;
+    }
+
+    .rte &,
+    #block-seven-content &{
+        &:not(.button){
+            text-decoration: underline;
+        }
+    }
+
+}
+
+@mixin button($multiplier: 1) {
+    @include transitions();
+    color: #fff;
+    background: $color--primary;
+    border: 0;
+    display: inline-block;
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    outline-color:$color--text;
+    outline-offset:$outline-offset;
+
+    @include hover() {
+        background: $color--secondary;
+        cursor: pointer;
+    }
+}
+
+@mixin pdf(){
+    padding-left:0; background:none;
+    a{
+        @include fonticonSetup();
+        @include fonticon('\e908',20px,$color--text,50%,0,auto,auto,false,true);
+        padding-left:30px; display:inline-block;
+    }
+}

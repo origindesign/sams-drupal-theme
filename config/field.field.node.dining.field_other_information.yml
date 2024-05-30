@@ -1,0 +1,21 @@
+uuid: 8adc9503-d85a-423a-ae03-629acacffd63
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_other_information
+    - node.type.dining
+_core:
+  default_config_hash: j_WnzlNpt7JgboAizK_obruYTFQFHnRVoh3vxgZ-fE0
+id: node.dining.field_other_information
+field_name: field_other_information
+entity_type: node
+bundle: dining
+label: 'Other Information'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

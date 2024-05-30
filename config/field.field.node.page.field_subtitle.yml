@@ -1,0 +1,21 @@
+uuid: 77002334-a8b9-450a-adc7-ccbc29b6be7d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_subtitle
+    - node.type.page
+_core:
+  default_config_hash: eS961V4JRXp56_jNT049syIQcJ9wPV60UvJXAX5BGSQ
+id: node.page.field_subtitle
+field_name: field_subtitle
+entity_type: node
+bundle: page
+label: Subtitle
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

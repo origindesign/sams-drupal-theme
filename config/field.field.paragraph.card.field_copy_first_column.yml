@@ -1,0 +1,24 @@
+uuid: 6335b0c3-363c-4d78-ada8-cb4ae91820e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_copy_first_column
+    - filter.format.basic_html
+    - paragraphs.paragraphs_type.card
+  module:
+    - text
+id: paragraph.card.field_copy_first_column
+field_name: field_copy_first_column
+entity_type: paragraph
+bundle: card
+label: Copy
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text_long

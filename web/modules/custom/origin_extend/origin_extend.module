@@ -1,0 +1,110 @@
+<?php
+
+use Drupal\media\Entity\Media;
+use Drupal\file\Entity\File;
+use Drupal\image\Entity\ImageStyle;
+
+/**
+ * Implements hook_token_info().
+ * Setup tokens to be used in Schema
+ */
+function origin_extend_token_info() {
+  $type = [
+    'name' => t('Schema'),
+    'description' => t('Tokens for SEO Schema'),
+  ];
+  $schema = [
+    'description' => ['name' => t("Description"), 'description' => t('Site description')],
+    'image' => ['name' => t("Image"), 'description' => t('URL to front page image')],
+    'logo' => ['name' => t("Logo"), 'description' => t('URL to the sites logo')],
+    'phone' => ['name' => t("Phone"), 'description' => t('Phone number')],
+    'social' => ['name' => t("Social"), 'description' => t('Social URLs')],
+    'street_address' => ['name' => t("Street address"), 'description' => t('Street address')],
+    'city' => ['name' => t("City"), 'description' => t('City')],
+    'region' => ['name' => t("Region"), 'description' => t('Region')],
+    'postcode' => ['name' => t("Postcode"), 'description' => t('Postcode')],
+    'country' => ['name' => t("Country"), 'description' => t('Country')],
+  ];
+  return [
+    'types' => ['schema' => $type],
+    'tokens' => ['schema' => $schema],
+  ];
+}
+
+
+
+/**
+ * Implements hook_tokens().
+ * Return token values based on active theme
+ */
+function origin_extend_tokens($type, $tokens, array $data, array $options, \Drupal\Core\Render\BubbleableMetadata $bubbleable_metadata) {
+  $replacements = [];
+
+  // Get theme
+  $config = \Drupal::config('system.theme');
+  $theme = $config->get('default');
+  $base_theme_path = \Drupal::service('extension.list.theme')->getPath($theme);
+  // Load front node
+  /*$frontpage = \Drupal::entityTypeManager()->getStorage('node')->load(89);
+  // Load front meta tags
+  $metatag_manager = \Drupal::service('metatag.manager');
+  $tags = $metatag_manager->tagsFromEntity($frontpage);
+  if(isset($tags['description'])){
+    $description = $tags['description'];
+  } else {
+    $description = '';
+  }
+  // Load front media
+  $media = $frontpage->get('field_main_image')->getValue();
+  if(isset($media[0])){
+    $mediaId = $media[0]['target_id'];
+  }
+  $image_url = '';
+  // If media is set, load image style URL
+  if(isset($mediaId)){
+    $media = Media::load($mediaId);
+    $fid = $media->field_media_image->target_id;
+    $file = File::load($fid);
+    $url = $file->getFileUri();
+    $style = ImageStyle::load('max_2600x2600');
+    $uri = $style->buildUri($url);
+    $image_url = $style->buildUrl($uri);
+  }*/
+
+  $logo = $base_theme_path.'/logo.svg';
+  $phone = '';
+  $social = '';
+  $streetAddress = '';
+  $city = '';
+  $region = '';
+  $postcode = '';
+  $country = '';
+
+  if ($type == 'schema') {
+    foreach ($tokens as $name => $original) {
+      switch ($name) {
+        /*case 'description':
+          $replacements[$original] = $description; break;
+        case 'image':
+          $replacements[$original] = $image_url; break;*/
+        case 'logo':
+          $replacements[$original] = $logo; break;
+        case 'phone':
+          $replacements[$original] = $phone; break;
+        case 'social':
+          $replacements[$original] = $social; break;
+        case 'street_address':
+          $replacements[$original] = $streetAddress; break;
+        case 'city':
+          $replacements[$original] = $city; break;
+        case 'region':
+          $replacements[$original] = $region; break;
+        case 'postcode':
+          $replacements[$original] = $postcode; break;
+        case 'country':
+          $replacements[$original] = $country; break;
+      }
+    }
+  }
+  return $replacements;
+}

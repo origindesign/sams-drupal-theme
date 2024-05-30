@@ -1,0 +1,10 @@
+uuid: c13f57f3-42f0-4b03-bd57-d8d7abb07981
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: pXiWvWjwtkFjBXA_72JciT7Gx7wDZXiMJ0MU3MdLuu4
+name: 'Level Category'
+vid: level_category
+description: ''
+weight: 0

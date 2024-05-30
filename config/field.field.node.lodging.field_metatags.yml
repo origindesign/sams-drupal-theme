@@ -1,0 +1,25 @@
+uuid: 2b468d64-28ed-4539-8215-4f8a6dd1f50e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_metatags
+    - node.type.lodging
+  module:
+    - metatag
+_core:
+  default_config_hash: qerJL8em6GnGvWiK8qZXBdvT4IaY9ikqxjezt0HE_D4
+id: node.lodging.field_metatags
+field_name: field_metatags
+entity_type: node
+bundle: lodging
+label: Metatags
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 'a:0:{}'
+default_value_callback: ''
+settings: {  }
+field_type: metatag

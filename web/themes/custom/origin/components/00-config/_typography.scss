@@ -1,0 +1,96 @@
+$base-font-size: 16;
+$medium-font-size: 15;
+$small-font-size: 14;
+$base-typography-spacing: 1em;
+$base-line-height: 1.8;
+
+@mixin fontsize($fontsize: $base-font-size){
+    font-size: calc(#{$fontsize}/10) + rem;
+}
+
+@mixin body-copy($multiplier: 1) {
+    @include fontsize($small-font-size * $multiplier);
+    line-height:$base-line-height; font-family:$font--regular;
+    @include breakpoint($bp--typography){
+        @include fontsize($medium-font-size * $multiplier);
+    }
+    @include breakpoint($bp--large-layout){
+        @include fontsize($base-font-size * $multiplier);
+    }
+}
+
+@mixin base-typography(){
+    p, ul, ol{
+        @include marginResets();
+        margin:$base-typography-spacing 0;
+    }
+    ul, ol{
+        padding-left: 2.5em;
+        ul, ol{
+            margin-bottom: 1em !important;
+        }
+    }
+}
+
+@mixin heading($fontsize: $base-font-size){
+    @include fontsize($fontsize);
+    font-family:$font--heading; font-weight: 400;
+}
+
+@mixin h1() {
+    @include heading(25);
+    line-height:1; margin:0;
+    @include breakpoint($bp--typography){
+        @include fontsize(30);
+    }
+    @include breakpoint($bp--large-layout){
+        @include fontsize(40);
+    }
+}
+
+@mixin h2() {
+    @include heading(24);
+    line-height:1; margin:0 0 $base-typography-spacing 0;
+    @include breakpoint($bp--typography){
+        @include fontsize(28);
+    }
+    @include breakpoint($bp--large-layout){
+        @include fontsize(30);
+    }
+}
+
+@mixin h3($multiplier: 1) {
+    @include heading(23*$multiplier);
+    line-height:1; margin:0 0 $base-typography-spacing 0;
+    @include breakpoint($bp--typography){
+        @include fontsize(26*$multiplier);
+    }
+    @include breakpoint($bp--large-layout){
+        @include fontsize(28*$multiplier);
+    }
+}
+
+@mixin h4($multiplier: 1) {
+    @include heading(22 * $multiplier);
+    line-height:1; margin:0;
+    @include breakpoint($bp--typography){
+        @include fontsize(24 * $multiplier);
+    }
+    @include breakpoint($bp--large-layout){
+        @include fontsize(26 * $multiplier);
+    }
+}
+
+@mixin h5($multiplier: 1) {
+    @include heading(20 * $multiplier);
+    line-height:1; margin:0;
+}
+
+@mixin h6($multiplier: 1) {
+    @include fontsize($base-font-size * $multiplier);
+    line-height:1; margin:0;
+}
+
+@mixin micetype($multiplier: 1){
+    @include fontsize(10 * $multiplier);
+}

@@ -1,0 +1,162 @@
+
+// Global setups
+// ----------------------
+
+.container{
+    @include container();
+}
+.inner-grid{
+    @include inner-grid();
+}
+.content-container{
+    @include content-container();
+    &.width--wide{
+        @include breakpoint($bp--large-layout){
+            grid-column: 2/span 10;
+        }
+    }
+}
+
+.row{
+    @include rowMargin();
+
+    &-padding{
+        @include rowPadding();
+    }
+
+}
+
+
+// Grid
+// ----------------------
+
+// Span Inner Grid
+.grid-inner{
+    &-full{
+        grid-column: 1/span 12;
+    }
+    &-2-10-large{
+        @include breakpoint($bp--large){
+            grid-column: 2/span 10;
+        }
+    }
+}
+
+// Grid Columns
+.columns{
+    --columns: 1;
+    display: grid; grid-template-columns: repeat(var(--columns), 1fr); column-gap: calc(var(--column-gap) * 3); row-gap: 4rem;
+    @include breakpoint($bp--laptop){
+        row-gap: 5.5rem;
+    }
+    @include breakpoint($bp--large){
+        row-gap: 7rem;
+    }
+
+    &.columns-3{
+        @include breakpoint($bp--tablet-portrait){
+            --columns: 2;
+        }
+        @include breakpoint($bp--laptop){
+            --columns: 3;
+            column-gap: calc(var(--column-gap) * 2);
+        }
+    }
+
+}
+
+
+// Flex Columns
+// ----------------------
+
+@mixin two-col-flex(){
+
+    @include breakpoint($bp--tablet-portrait){
+        display:flex; flex-wrap:wrap;
+    }
+
+    > *{
+        width:100%;
+        &:not(:last-child){
+            margin-bottom: $row-gap;
+        }
+        @include breakpoint($bp--tablet-portrait){
+            width: 50%;
+            &:last-child,
+            &:nth-last-child(2){
+                margin-bottom:0;
+            }
+        }
+    }
+
+}
+
+.two-col-flex{
+    @include two-col-flex();
+}
+
+@mixin three-col-flex(){
+    @include two-col-flex();
+
+    @include breakpoint($bp--tablet-landscape){
+
+        > *{
+            width:calc(100%/3);
+
+            &:last-child,
+            &:nth-last-child(2),
+            &:nth-last-child(3){
+                margin-bottom:0;
+            }
+
+        }
+
+    }
+
+}
+
+.three-col-flex{
+    @include three-col-flex();
+}
+
+
+// Image Aside Copy
+// ----------------------
+
+.image-aside-copy{
+
+    @include breakpoint($bp--tablet-landscape){
+        display:flex; flex-direction:row-reverse;
+    }
+
+    .image{
+        margin-bottom: $base-typography-spacing;
+
+        @include breakpoint($bp--tablet-landscape){
+            margin-bottom:0; width:40%;
+        }
+
+    }
+
+    .copy{
+        @include breakpoint($bp--tablet-landscape){
+            width:60%; padding-right: $column-gap;
+        }
+    }
+
+
+    &.align--left{
+
+        @include breakpoint($bp--tablet-landscape){
+            flex-direction: row;
+        }
+
+        .copy{
+            @include breakpoint($bp--tablet-landscape){
+                padding-left: $column-gap; padding-right:0;
+            }
+        }
+
+    }
+
+}

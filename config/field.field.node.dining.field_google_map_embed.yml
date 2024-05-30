@@ -1,0 +1,21 @@
+uuid: 2bb4b811-b575-43cf-a140-efe70f3fc5d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_google_map_embed
+    - node.type.dining
+  module:
+    - text
+id: node.dining.field_google_map_embed
+field_name: field_google_map_embed
+entity_type: node
+bundle: dining
+label: 'Google Map Embed'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

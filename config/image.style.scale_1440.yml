@@ -1,0 +1,18 @@
+uuid: be8a38dc-c031-4fb5-96d6-0d4d49f3fedb
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: QRSqVG2WGz3Ai79BT83OVT1oMo6E_eAJ8d1OzIbZVDE
+name: scale_1440
+label: 'Scale 1440'
+effects:
+  04895cec-df24-43a2-91ee-6a36d014bafe:
+    uuid: 04895cec-df24-43a2-91ee-6a36d014bafe
+    id: image_scale
+    weight: 1
+    data:
+      width: 1440
+      height: null
+      upscale: false
+pipeline: __default__

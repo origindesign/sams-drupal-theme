@@ -1,0 +1,48 @@
+
+@mixin tables($multiplier: 1){
+    @include fontsize(16 * $multiplier);
+    width:100%;
+
+    caption{
+        @include h4();
+        text-align:left;
+    }
+
+    th{
+        white-space:nowrap;
+        @include breakpoint($bp--tablet-portrait){
+            white-space:normal;
+        }
+    }
+
+    thead{
+        th{
+            background: $color--background; text-align:left;
+        }
+    }
+    tbody{
+        th{
+            font-weight:bold;
+        }
+    }
+
+    th{
+        text-align:left;
+    }
+
+    th,
+    td{
+        padding: 0.5rem 1rem;
+    }
+
+    tr{
+        background:#fff;
+    }
+
+    p{
+        margin: 0 !important;
+    }
+    .t-micetype{
+        font-weight: normal; font-family: $font--regular; text-transform: none;
+    }
+}

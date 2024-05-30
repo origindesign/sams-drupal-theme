@@ -1,0 +1,132 @@
+
+{{ attach_library('classy/node') }}
+
+{%
+    set classes = [
+        'node',
+        'node--type-' ~ node.bundle|clean_class,
+        node.isPromoted() ? 'node--promoted',
+        node.isSticky() ? 'node--sticky',
+        not node.isPublished() ? 'node--unpublished',
+        view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+        (has_hero_image ? 'has-hero-image' : 'no-hero-image')
+    ]
+%}
+
+<article id="node-{{ node.id }}" {{ attributes.addClass(classes) }}>
+
+    {{ messages }}
+
+    {% if not node.isPublished() %}
+        <div class="t-t-uppercase t-align-center content-unpublished">
+            This content is unpublished
+        </div>
+    {% endif %}
+
+
+    {% include "@molecules/hero/hero.twig" %}
+
+
+    {% if listing_above %}
+        {% include "@organisms/listings/listings.twig" %}
+    {% endif %}
+
+
+    {% if custom_blocks_above %}
+
+        {% for block in custom_blocks_above %}
+            <div class="row custom-block {{ block['class'] }}">
+                {% if block['inner_class'] %}
+                <div class="{{ block['inner_class'] }}">
+                    {% endif %}
+                    {{ block['block'] }}
+                    {% if block['inner_class'] %}
+                </div>
+                {% endif %}
+            </div>
+        {% endfor %}
+
+    {% endif %}
+
+    {%  if content.body|render or content.field_paragraphs|render %}
+        <div class="row node-content">
+
+            <div class="container body">
+                <div class="inner-grid">
+                    <div class="content-container">
+                        {{ content.body }}
+                    </div>
+                </div>
+
+            </div>
+
+            {{ content.field_paragraphs }}
+
+        </div>
+    {% endif %}
+
+
+    {% if custom_blocks %}
+
+        {% for block in custom_blocks %}
+            <div class="row custom-block {{ block['class'] }}">
+                {% if block['inner_class'] %}
+                <div class="{{ block['inner_class'] }}">
+                    {% endif %}
+                    {{ block['block'] }}
+                    {% if block['inner_class'] %}
+                </div>
+                {% endif %}
+            </div>
+        {% endfor %}
+
+    {% endif %}
+
+
+    {% if not listing_above %}
+        {% include "@organisms/listings/listings.twig" %}
+    {% endif %}
+
+
+    {% if custom_include %}
+
+        {% for include in custom_include %}
+            <div class="row custom-include container {{ include['class'] }}">
+                {% include include['path'] %}
+            </div>
+        {% endfor %}
+
+    {% endif %}
+
+
+    {% if display_submitted %}
+        <footer class="node__meta">
+            {{ author_picture }}
+            <div{{ author_attributes.addClass('node__submitted') }}>
+                {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+                {{ metadata }}
+            </div>
+        </footer>
+    {% endif %}
+
+
+    {% if content.field_related_content|render %}
+
+        <div class="row related-content">
+
+            {% if content.field_related_content_heading|render %}
+                <h2>{{ content.field_related_content_heading|field_value }}</h2>
+            {% endif %}
+
+            <div class="columns columns-3 delay-grid-3">
+                {% for item in content.field_related_content|field_value %}
+                    {{ item }}
+                {% endfor %}
+            </div>
+
+        </div>
+
+    {% endif %}
+
+
+</article>

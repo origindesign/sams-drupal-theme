@@ -1,0 +1,44 @@
+uuid: 8a24183c-978b-488a-9fb1-4e8512f60b0f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.file.field_media_file
+    - field.field.media.file.field_tags
+    - media.type.file
+  module:
+    - file
+_core:
+  default_config_hash: MoONd1Snx4wuAdOo3Xh0yr9kyIf_L5_ocp50YjG74dQ
+id: media.file.media_library
+targetEntityType: media
+bundle: file
+mode: media_library
+content:
+  field_media_file:
+    type: file_generic
+    weight: 0
+    region: content
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+  field_tags:
+    type: entity_reference_autocomplete_tags
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  name: true
+  path: true
+  publish_on: true
+  scheduler_settings: true
+  status: true
+  uid: true
+  unpublish_on: true

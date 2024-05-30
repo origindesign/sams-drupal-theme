@@ -1,0 +1,24 @@
+uuid: db7e533e-0fb5-4888-8888-c99c2e4092d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_order_weight
+    - node.type.dining
+  module:
+    - weight
+id: node.dining.field_order_weight
+field_name: field_order_weight
+entity_type: node
+bundle: dining
+label: 'Order Weight'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: '0'
+default_value_callback: ''
+settings:
+  range: '200'
+field_type: weight

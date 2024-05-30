@@ -1,0 +1,10 @@
+uuid: dd0b786f-ed5a-4145-a156-f52d99d8d704
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: xZfqGQUSSnYcKTzL0w2lQ914TkLDEmF7tVnNEZhv-ro
+name: 'Event Category'
+vid: event_category
+description: ''
+weight: 0

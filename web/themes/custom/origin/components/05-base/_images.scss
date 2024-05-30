@@ -1,0 +1,62 @@
+
+@mixin object-fit($fit: cover, $position: 50% 50%) {
+    -o-object-fit: $fit;
+    object-fit: $fit;
+    @if $position {
+        -o-object-position: $position;
+        object-position: $position;
+        font-family: "object-fit: #{$fit}; object-position: #{$position}";
+    } @else {
+        font-family: "object-fit: #{$fit}";
+    }
+}
+
+@mixin object-position($position: 50% 50%) {
+    -o-object-position: $position !important;
+    object-position: $position !important;
+    font-family: "object-position: #{$position}" !important;
+}
+
+@mixin objectFitImage() {
+    position: relative;
+    display: block;
+    img{
+        object-position: var(--focal-point) !important;
+        &:not(.lazyautosizes),
+        &.lazyautosizes.lazyloaded {
+            @include cover();
+        }
+    }
+    .lazysizes-display-clone{
+        height:100% !important;
+    }
+}
+
+@mixin objectFitReset(){
+    aspect-ratio: unset !important;
+    @supports not (aspect-ratio: auto) {
+        padding-bottom: 0 !important;
+    }
+    img{
+        position:static !important; object-fit:unset !important; object-position:initial !important; font-family:'Arial', sans-serif !important;
+        &[style*="hidden"]{
+            position:absolute !important;
+        }
+    }
+}
+
+@mixin media-cover(){
+    *:not(.contextual){
+        @include cover();
+    }
+}
+
+.media .field--name-field-media-image{
+    img{
+        position:absolute;
+        &:not(.lazyautosizes),
+        &.lazyautosizes.lazyloaded {
+            @include object-fit(cover, 50% 50%); }
+
+    }
+}

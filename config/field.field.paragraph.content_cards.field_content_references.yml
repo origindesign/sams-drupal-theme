@@ -1,0 +1,25 @@
+uuid: 8ef8fb7e-de05-4e5c-8e57-676f62824b07
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_content_references
+    - paragraphs.paragraphs_type.content_cards
+id: paragraph.content_cards.field_content_references
+field_name: field_content_references
+entity_type: paragraph
+bundle: content_cards
+label: Content
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: entity_references
+      display_name: related_content
+      arguments: {  }
+field_type: entity_reference

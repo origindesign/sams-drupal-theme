@@ -1,0 +1,24 @@
+uuid: c5041b33-36eb-45a5-856d-69b04e73d0d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_copy_first_column
+    - filter.format.basic_html
+    - paragraphs.paragraphs_type.quote
+  module:
+    - text
+id: paragraph.quote.field_copy_first_column
+field_name: field_copy_first_column
+entity_type: paragraph
+bundle: quote
+label: Quote
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text_long

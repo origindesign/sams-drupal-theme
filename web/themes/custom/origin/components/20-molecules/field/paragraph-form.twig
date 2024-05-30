@@ -1,0 +1,22 @@
+
+{%
+    set classes = [
+        'paragraph',
+        'paragraph--type--' ~ paragraph.bundle|clean_class,
+        view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+        not paragraph.isPublished() ? 'paragraph--unpublished',
+        'fade-in container inner-grid'
+    ]
+%}
+
+{% block paragraph %}
+    <div{{ attributes.addClass(classes) }} id="paragraph-{{ paragraph.id() }}">
+
+        <div class="content-container">
+            {{ content.field_heading }}
+            {{ content.field_copy_first_column }}
+            {{ content.field_form }}
+        </div>
+
+    </div>
+{% endblock paragraph %}

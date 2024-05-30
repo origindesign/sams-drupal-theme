@@ -1,0 +1,49 @@
+uuid: 798af053-ade3-47d5-8aa7-9f733d2cea97
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.inline_image.field_link
+    - field.field.media.inline_image.field_media_image_1
+    - field.field.media.inline_image.field_tags
+    - lazy.settings
+    - media.type.inline_image
+    - responsive_image.styles.auto
+  module:
+    - lazy
+    - link
+    - responsive_image
+_core:
+  default_config_hash: zeqOd-aJGjaYRTXmg_cQ936d7jbXQMFRzKEdAWCEz2I
+id: media.inline_image.default
+targetEntityType: media
+bundle: inline_image
+mode: default
+content:
+  field_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_media_image_1:
+    type: lazy_responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: auto
+      image_link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  created: true
+  field_tags: true
+  name: true
+  thumbnail: true
+  uid: true

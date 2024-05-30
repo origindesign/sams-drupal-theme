@@ -1,0 +1,10 @@
+uuid: 7b9d99e0-c3f4-474c-bd01-8336d8bf468c
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: EBFt1niizHDSE1Iloat6YeIqy6DQ_EGPBvoENdsXmxw
+name: 'Lodging Category'
+vid: lodging_category
+description: ''
+weight: 0

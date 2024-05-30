@@ -1,0 +1,8 @@
+uuid: 0f48dfdb-0b0e-441a-8494-404ce302d2f5
+langcode: en
+status: true
+dependencies: {  }
+name: 'Condition Category'
+vid: condition_category
+description: ''
+weight: 0

@@ -1,0 +1,21 @@
+uuid: 364e063e-f965-4300-9644-62877a9a8b57
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_heading
+    - paragraphs.paragraphs_type.media_slideshow
+_core:
+  default_config_hash: 6jB67Vwc8of3NFO8LcfTjUgJlJJOVX2oOfk0XHgxfaY
+id: paragraph.media_slideshow.field_heading
+field_name: field_heading
+entity_type: paragraph
+bundle: media_slideshow
+label: Heading
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

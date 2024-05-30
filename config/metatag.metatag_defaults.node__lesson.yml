@@ -1,0 +1,8 @@
+uuid: 3f41ff67-a452-4e8c-b26b-529a63c4cfc9
+langcode: en
+status: true
+dependencies: {  }
+id: node__lesson
+label: 'Content: Lesson'
+tags:
+  schema_web_page_type: ItemPage

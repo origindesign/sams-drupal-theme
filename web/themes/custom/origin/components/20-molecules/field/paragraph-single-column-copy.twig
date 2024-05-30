@@ -1,0 +1,33 @@
+
+{% if content.field_accordion[0]["#markup"] == "1" %}
+    {% set accordion = true %}
+{% endif %}
+
+{%
+    set classes = [
+        'paragraph',
+        'paragraph--type--' ~ paragraph.bundle|clean_class,
+        view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+        not paragraph.isPublished() ? 'paragraph--unpublished',
+        content.field_width|render ? 'width--'~content.field_width[0]["#markup"],
+        (accordion ? 'accordion'),
+        'container inner-grid'
+    ]
+%}
+
+
+{% if accordion %}
+    {{ attach_library('origin/accordion') }}
+{% endif %}
+
+
+{% block paragraph %}
+    <div{{ attributes.addClass(classes) }} id="paragraph-{{ paragraph.id() }}">
+
+        <div class="fade-in content-container width--{{ content.field_width[0]["#markup"] }}">
+            {{ content.field_heading}}
+            {{ content.field_copy_first_column }}
+        </div>
+
+    </div>
+{% endblock paragraph %}

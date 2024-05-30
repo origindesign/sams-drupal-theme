@@ -1,0 +1,13 @@
+uuid: 15fc4d23-0f2a-40f4-8074-afb83231e07d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: Im2Bsm0M7l9jgX059YbkeuwcoAUEPrwzPWAMNoYRthE
+id: node.row
+label: Row
+description: ''
+targetEntityType: node
+cache: true

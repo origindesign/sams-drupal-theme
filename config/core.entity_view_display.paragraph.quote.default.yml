@@ -1,0 +1,31 @@
+uuid: c18efa80-19fa-44ca-a8a8-dbb4a6599e88
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.quote.field_copy_first_column
+    - field.field.paragraph.quote.field_heading
+    - paragraphs.paragraphs_type.quote
+  module:
+    - text
+id: paragraph.quote.default
+targetEntityType: paragraph
+bundle: quote
+mode: default
+content:
+  field_copy_first_column:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

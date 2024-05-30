@@ -1,0 +1,24 @@
+uuid: 21664b77-0cf2-4d83-a0bd-94e4a2de23aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_order_weight
+    - node.type.lodging
+  module:
+    - weight
+id: node.lodging.field_order_weight
+field_name: field_order_weight
+entity_type: node
+bundle: lodging
+label: 'Order Weight'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: '0'
+default_value_callback: ''
+settings:
+  range: '200'
+field_type: weight

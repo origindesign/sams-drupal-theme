@@ -1,0 +1,31 @@
+uuid: c1f5eaba-5d07-470a-a435-2f811f001ecc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_category_2
+    - node.type.lesson
+    - taxonomy.vocabulary.level_category
+_core:
+  default_config_hash: 0iGxaYGt8mqaGtCRCgBttgImIo_QXbM4LmuE-TKMB_c
+id: node.lesson.field_category_2
+field_name: field_category_2
+entity_type: node
+bundle: lesson
+label: 'Level Category'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      level_category: level_category
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: age_category
+field_type: entity_reference

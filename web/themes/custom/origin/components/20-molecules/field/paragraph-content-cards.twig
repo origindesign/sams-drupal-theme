@@ -1,0 +1,30 @@
+
+{%
+    set classes = [
+        'paragraph',
+        'paragraph--type--' ~ paragraph.bundle|clean_class,
+        view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+        not paragraph.isPublished() ? 'paragraph--unpublished',
+        'container'
+    ]
+%}
+
+
+{% block paragraph %}
+    <div{{ attributes.addClass(classes) }} id="paragraph-{{ paragraph.id() }}">
+
+        <h2 class="fade-in">
+            {{ content.field_heading|field_value }}
+        </h2>
+
+        <div class="columns columns-3 delay-grid-3">
+            {% for item in content.field_content_references|field_value %}
+                {{ item }}
+            {% endfor %}
+            {% for item in content.field_content|field_value %}
+                {{ item }}
+            {% endfor %}
+        </div>
+
+    </div>
+{% endblock paragraph %}

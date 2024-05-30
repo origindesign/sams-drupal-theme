@@ -1,0 +1,147 @@
+uuid: c752884f-0a7b-408e-a666-dd50b608fad4
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+    - media.type.file
+    - media.type.image
+    - media.type.inline_image
+    - media.type.remote_video
+    - node.type.lift_trail
+    - taxonomy.vocabulary.activity_category
+    - taxonomy.vocabulary.age_category
+    - taxonomy.vocabulary.article_category
+    - taxonomy.vocabulary.dining_category
+    - taxonomy.vocabulary.event_category
+    - taxonomy.vocabulary.level_category
+    - taxonomy.vocabulary.lifts_trails_type
+    - taxonomy.vocabulary.lodging_category
+    - taxonomy.vocabulary.status
+    - taxonomy.vocabulary.tags
+  module:
+    - cacheflush
+    - config_pages
+    - contextual
+    - file
+    - filter
+    - help
+    - media
+    - node
+    - paragraphs_library
+    - path
+    - redirect
+    - role_delegation
+    - shortcut
+    - smart_date_recur
+    - system
+    - taxonomy
+    - toolbar
+    - view_unpublished
+    - webform
+id: site_admin
+label: 'Site Admin'
+weight: 3
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access content'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access files overview'
+  - 'access help pages'
+  - 'access media overview'
+  - 'access shortcuts'
+  - 'access site in maintenance mode'
+  - 'access taxonomy overview'
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'access webform overview'
+  - 'access webform submission user'
+  - 'administer media'
+  - 'administer menu'
+  - 'administer nodes'
+  - 'administer paragraphs library'
+  - 'administer redirects'
+  - 'administer users'
+  - 'administer webform submission'
+  - 'assign site_admin role'
+  - 'bypass node access'
+  - 'cacheflush clear cache'
+  - 'cancel smart date recur instances'
+  - 'change own username'
+  - 'create file media'
+  - 'create image media'
+  - 'create inline_image media'
+  - 'create lift_trail content'
+  - 'create media'
+  - 'create paragraph library item'
+  - 'create remote_video media'
+  - 'create terms in activity_category'
+  - 'create terms in age_category'
+  - 'create terms in article_category'
+  - 'create terms in dining_category'
+  - 'create terms in event_category'
+  - 'create terms in level_category'
+  - 'create terms in lifts_trails_type'
+  - 'create terms in lodging_category'
+  - 'create terms in status'
+  - 'create terms in tags'
+  - 'create url aliases'
+  - 'delete all revisions'
+  - 'delete any file media'
+  - 'delete any image media'
+  - 'delete any inline_image media'
+  - 'delete any media'
+  - 'delete any remote_video media'
+  - 'delete media'
+  - 'delete own file media'
+  - 'delete own files'
+  - 'delete own image media'
+  - 'delete own inline_image media'
+  - 'delete own remote_video media'
+  - 'delete terms in activity_category'
+  - 'delete terms in age_category'
+  - 'delete terms in article_category'
+  - 'delete terms in dining_category'
+  - 'delete terms in event_category'
+  - 'delete terms in level_category'
+  - 'delete terms in lifts_trails_type'
+  - 'delete terms in lodging_category'
+  - 'delete terms in status'
+  - 'delete terms in tags'
+  - 'edit any file media'
+  - 'edit any image media'
+  - 'edit any inline_image media'
+  - 'edit any lift_trail content'
+  - 'edit any remote_video media'
+  - 'edit config_pages entity'
+  - 'edit own file media'
+  - 'edit own image media'
+  - 'edit own inline_image media'
+  - 'edit own remote_video media'
+  - 'edit paragraph library item'
+  - 'edit terms in activity_category'
+  - 'edit terms in age_category'
+  - 'edit terms in article_category'
+  - 'edit terms in dining_category'
+  - 'edit terms in event_category'
+  - 'edit terms in level_category'
+  - 'edit terms in lifts_trails_type'
+  - 'edit terms in lodging_category'
+  - 'edit terms in status'
+  - 'edit terms in tags'
+  - 'make smart dates recur'
+  - 'reschedule smart date recur instances'
+  - 'revert all revisions'
+  - 'update any media'
+  - 'update media'
+  - 'use text format basic_html'
+  - 'view all media revisions'
+  - 'view all revisions'
+  - 'view any unpublished content'
+  - 'view any webform submission'
+  - 'view media'
+  - 'view own unpublished content'
+  - 'view own unpublished media'
+  - 'view the administration theme'

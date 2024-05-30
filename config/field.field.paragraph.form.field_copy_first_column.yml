@@ -1,0 +1,22 @@
+uuid: f613f0f2-6cb9-4525-9e82-bfaef6b059c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_copy_first_column
+    - paragraphs.paragraphs_type.form
+  module:
+    - text
+id: paragraph.form.field_copy_first_column
+field_name: field_copy_first_column
+entity_type: paragraph
+bundle: form
+label: Copy
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

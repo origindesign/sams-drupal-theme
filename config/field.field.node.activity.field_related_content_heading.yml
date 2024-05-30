@@ -1,0 +1,21 @@
+uuid: d4ec2b18-24e5-41b0-8356-10675c613802
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_content_heading
+    - node.type.activity
+id: node.activity.field_related_content_heading
+field_name: field_related_content_heading
+entity_type: node
+bundle: activity
+label: 'Related Content Heading'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 'Related Content'
+default_value_callback: ''
+settings: {  }
+field_type: string

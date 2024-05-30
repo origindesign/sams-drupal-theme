@@ -1,0 +1,15 @@
+uuid: 42c15b3d-1107-4be6-842c-a72f6c61eefa
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs_library
+third_party_settings:
+  paragraphs_library:
+    allow_library_conversion: true
+id: custom_cards
+label: 'Custom Cards'
+icon_uuid: null
+icon_default: null
+description: "Custom content to be displayed using the 'card' layout"
+behavior_plugins: {  }

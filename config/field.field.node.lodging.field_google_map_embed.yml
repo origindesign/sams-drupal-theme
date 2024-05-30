@@ -1,0 +1,21 @@
+uuid: b91f60e2-0b4e-4129-aae5-aa1079e2f6e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_google_map_embed
+    - node.type.lodging
+  module:
+    - text
+id: node.lodging.field_google_map_embed
+field_name: field_google_map_embed
+entity_type: node
+bundle: lodging
+label: 'Google Map Embed'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

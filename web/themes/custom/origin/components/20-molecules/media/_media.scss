@@ -1,0 +1,70 @@
+
+.cke_widget_element{
+    width:100%;
+}
+
+.file--application-pdf{
+    @include pdf();
+}
+
+.media {
+    position: relative;
+
+    &.media--type-inline-image{
+        position:static; width:auto; height:auto;
+
+        .media{
+            position:static;
+        }
+
+    }
+
+    .field--name-field-media-image{
+        @include objectFitImage();
+        aspect-ratio: calc(1/var(--aspect-ratio));
+        @supports not (aspect-ratio: auto) {
+            padding-bottom: calc(var(--aspect-ratio) * 100%);
+        }
+    }
+
+    .field--name-field-media-oembed-video{
+        @include cover();
+        z-index: 2;
+        iframe{
+            @include cover();
+            height: 100% !important;
+        }
+    }
+
+    &--type-remote-video{
+        .field--name-field-media-image{
+            --aspect-ratio: #{$widescreen-image-padding};
+            z-index: 1;
+        }
+        .field--name-field-media-oembed-video{
+            z-index: 2;
+        }
+        .video-poster-frame{
+            @include fonticon('\e906', 1.8rem, $color--primary, 50%, 50%, auto, auto, true, true);
+        }
+    }
+
+    .field--name-field-credit{
+        top:0; left:0; padding:0.25em 0.5em; background:rgba(#fff,0.5);
+        .hide-credit &{
+            display: none;
+        }
+    }
+
+    .field--name-field-credit{
+        position: absolute; background: #fff; padding: 0.5em;
+    }
+    .field--name-field-caption{
+        padding:0.5em 1em;
+    }
+
+    &-widescreen{
+        --aspect-ratio: #{$widescreen-image-padding};
+    }
+
+}

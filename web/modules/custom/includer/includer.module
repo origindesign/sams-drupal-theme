@@ -1,0 +1,12 @@
+<?php
+
+use Drupal\Core\Cache\Cache;
+
+
+/**
+ * Implements hook_cron().
+ * Clear events node list on cron to refresh event date filters
+ */
+function includer_cron() {
+  Cache::invalidateTags(['node_list:event']);
+}

@@ -1,0 +1,37 @@
+name: Origin
+type: theme
+description: An Origin Drupal starter theme.
+core_version_requirement: ^9.2 || ^10
+base theme: classy
+version: '1.0'
+libraries-override:
+  classy/base: false
+dependencies:
+  - classy:classy
+
+# Defines libraries group in which we can add css/js.
+libraries:
+  - origin/origin
+
+# Regions
+regions:
+  content: Content
+  disabled: Disabled
+
+# WYSIWYG Stlyes
+ckeditor5-stylesheets:
+  - dist/ckeditor-styles.css
+
+# Components
+components:
+  namespaces:
+    atoms:
+      - components/10-atoms
+    molecules:
+      - components/20-molecules
+    organisms:
+      - components/30-organisms
+    templates:
+      - components/40-templates
+    pages:
+      - components/50-pages

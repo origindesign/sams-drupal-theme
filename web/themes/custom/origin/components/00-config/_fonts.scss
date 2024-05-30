@@ -1,0 +1,15 @@
+
+// Site font
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
+
+// Icomoon
+@font-face {
+    font-family: 'icomoon';
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    src: url('https://cdn.icomoon.io/42560/OriginDrop/icomoon.woff2?4a6dsz') format('woff2'), url('https://cdn.icomoon.io/42560/OriginDrop/icomoon.woff?4a6dsz') format('woff');
+}
+
+$font--regular: 'Roboto', sans-serif;
+$font--heading: 'Anton', sans-serif;

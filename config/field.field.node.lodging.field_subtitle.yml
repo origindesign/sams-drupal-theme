@@ -1,0 +1,21 @@
+uuid: cdb7a96e-012d-4d95-a9df-49122e2b25ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_subtitle
+    - node.type.lodging
+_core:
+  default_config_hash: y91VtUmaOYVDGJ9PDG8W9TiJfOlU2EDkPPujs6wtrTM
+id: node.lodging.field_subtitle
+field_name: field_subtitle
+entity_type: node
+bundle: lodging
+label: Subtitle
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

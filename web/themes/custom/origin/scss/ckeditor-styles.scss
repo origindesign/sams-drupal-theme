@@ -1,0 +1,79 @@
+// A cleaner way to do breakpoints/media queries, http://breakpoint-sass.com/
+@import "../node_modules/breakpoint-sass/stylesheets/breakpoint";
+
+// Helpful mixins, http://bourbon.io/docs/
+@import "../node_modules/bourbon/core/bourbon";
+
+// Import all component styles.
+@import "../components/00-config/*";
+@import "../components/03-mixins/*";
+
+
+.ck-source-editing-area{
+    min-height: 300px;
+}
+
+.ck-editor{
+
+    .ck-content{
+        $multiplier: 0.625;
+        @include body-copy($multiplier);
+
+        &.ck-editor__editable{
+            min-height: 150px; color: $color--text; padding: 1em;
+        }
+
+        h3{ @include h3($multiplier); }
+        h4{ @include h4($multiplier); }
+        h5{ @include h5($multiplier); }
+        h6{ @include h6($multiplier); }
+
+        // All font styles
+        @include base-typography();
+
+        .t-micetype{
+            @include micetype($multiplier);
+        }
+
+        // All buttons styles
+        a{
+            @include link();
+        }
+        .button{
+            @include button($multiplier);
+            text-shadow: none;
+        }
+
+        // Media
+        .drupal-media{
+            @include margin(0);
+            text-align: left;
+        }
+        .file--application-pdf{
+            @include pdf();
+        }
+
+        // Tables
+        .table {
+            width: 100% !important;
+
+            table{
+                @include tables($multiplier);
+            }
+            > figcaption {
+                @include h3($multiplier);
+                text-align: left; padding: 0; background: none;
+            }
+            th {
+                text-align: left;
+                text-transform: none;
+            }
+
+        }
+    }
+
+    [aria-label="Source code editing area"]{
+        --ck-font-size-normal: 1.2em !important;
+    }
+
+}

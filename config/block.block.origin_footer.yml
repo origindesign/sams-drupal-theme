@@ -1,0 +1,27 @@
+uuid: 72f3906e-0870-43fa-a140-0634b9d3565b
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - origin
+_core:
+  default_config_hash: HraZPV5xgiLduNCSp75kNEqKNzTp77BzEhWsOd1SppA
+id: origin_footer
+theme: origin
+region: disabled
+weight: -4
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: 'Footer menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

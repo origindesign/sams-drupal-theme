@@ -1,0 +1,21 @@
+uuid: 6698d1da-d4f0-45d3-90ee-1f17880366bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_google_map_embed
+    - node.type.activity
+  module:
+    - text
+id: node.activity.field_google_map_embed
+field_name: field_google_map_embed
+entity_type: node
+bundle: activity
+label: 'Google Map Embed'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

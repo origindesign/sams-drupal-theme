@@ -1,0 +1,27 @@
+uuid: 539808a1-6304-4425-864b-d0cd9eaeed62
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_content
+    - node.type.dining
+_core:
+  default_config_hash: LinwsTRhK9PastWJqa30zwPtHTdVxBCm2YGeh_21Gao
+id: node.dining.field_related_content
+field_name: field_related_content
+entity_type: node
+bundle: dining
+label: 'Related Content'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: entity_references
+      display_name: related_content
+      arguments: {  }
+field_type: entity_reference

@@ -1,0 +1,53 @@
+#!/bin/bash
+
+set -eo pipefail
+
+terminus -n env:wake "$TERMINUS_SITE.dev"
+
+# If branch is master, push code to dev and test
+if [[ $CIRCLE_BRANCH == "master" ]]; then
+
+   # Push code to dev env
+   terminus -n build:env:create "$TERMINUS_SITE.dev" "$TERMINUS_ENV" --yes --clone-content --notify="$NOTIFY"
+
+   # Run updatedb to ensure that the cloned database is updated for the new code
+   terminus -n drush "$TERMINUS_SITE.$TERMINUS_ENV" -- updatedb -y
+
+   # If exported configuration is available, then import it.
+   if [ -f "config/system.site.yml" ] ; then
+     terminus -n drush "$TERMINUS_SITE.$TERMINUS_ENV" -- config-import --yes
+   fi
+
+# Otherwise work on a multidev for test
+else
+
+    # Search list of Pantheon multidevs to see if this branch already exits
+    MULTIDEVS=$(terminus multidev:list --field=id --format=string $TERMINUS_SITE)
+    CREATE_MULTI_DEV=TRUE
+
+    for i in $MULTIDEVS
+    do
+        # Branch exists, use this for test
+        if [[ $i == *$CIRCLE_BRANCH* ]]; then
+            echo "Mutidev "$CIRCLE_BRANCH" already exists, push code to it and test"
+            terminus -n build:env:push "$TERMINUS_SITE.$CIRCLE_BRANCH"
+            CREATE_MULTI_DEV=FALSE
+        fi
+    done
+
+    # Branch does not exist, create new multidev and use for test
+    if [ $CREATE_MULTI_DEV == TRUE ]; then
+        echo "Mutidev doesnt exist, create a new one and test"
+        terminus -n build:env:create "$TERMINUS_SITE.dev" "$CIRCLE_BRANCH" --yes --clone-content --notify="$NOTIFY"
+    fi
+
+
+   # Run updatedb to ensure that the cloned database is updated for the new code
+   terminus -n drush "$TERMINUS_SITE.$CIRCLE_BRANCH" -- updatedb -y
+
+   # If exported configuration is available, then import it.
+   if [ -f "config/system.site.yml" ] ; then
+     terminus -n drush "$TERMINUS_SITE.$CIRCLE_BRANCH" -- config-import --yes
+   fi
+
+fi

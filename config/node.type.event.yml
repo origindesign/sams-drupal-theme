@@ -1,0 +1,33 @@
+uuid: 13ea15c2-cbb5-4fad-acba-75a4e3878c91
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - scheduler
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  scheduler:
+    expand_fieldset: always
+    fields_display_mode: fieldset
+    publish_enable: true
+    publish_past_date: publish
+    publish_past_date_created: false
+    publish_required: false
+    publish_revision: false
+    publish_touch: false
+    show_message_after_update: true
+    unpublish_enable: true
+    unpublish_required: false
+    unpublish_revision: false
+_core:
+  default_config_hash: AE2lotPoYRkSC2zivHv-RKsaAFBluNQZlye5qJcbQY4
+name: Event
+type: event
+description: 'Use <em>Event</em> for your time-sensitive content that you want to display in the calendar.'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

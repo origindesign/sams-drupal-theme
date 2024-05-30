@@ -1,0 +1,19 @@
+uuid: c753f652-2184-4080-aa36-804a8c0526f6
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+_core:
+  default_config_hash: Cl2RzDl57H6m0kFaNROuFy_v79eYQrbTHK5ifWf0LAg
+name: Lesson
+type: lesson
+description: 'Use <em>Lesson</em> to add new content on the Lessons Finder.'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

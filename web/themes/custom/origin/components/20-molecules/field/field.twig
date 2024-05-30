@@ -1,0 +1,156 @@
+
+{%
+    set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'field--label-' ~ label_display,
+]
+%}
+
+{% if extra_classes %}
+    {% set classes = classes|merge(extra_classes) %}
+{% endif %}
+
+{%
+    set title_classes = [
+    'field__label',
+    label_display == 'visually_hidden' ? 'visually-hidden',
+]
+%}
+
+{% if label_hidden %}
+
+    {% if multiple %}
+
+        <div{{ attributes.addClass(classes, 'field__items') }}>
+
+            {% if slick %}
+            <div class="slides-wrap {{ slick_wrap_class }}">
+            {% endif %}
+
+                {% for item in items %}
+
+                    {%
+                        set classes = [
+                        'field__item'
+                    ]
+                    %}
+                    {% if item.extra_classes %}
+                        {% set classes = classes|merge(item.extra_classes) %}
+                    {% endif %}
+
+                    {% if item.url %}
+                        <a {{ item.attributes.addClass(classes) }} href="{{ item.url }}">
+                            {{ item.content }}
+                        </a>
+                    {% else %}
+                        <div{{ item.attributes.addClass(classes) }}>
+                            {{ item.content }}
+                        </div>
+                    {% endif %}
+
+                {% endfor %}
+
+            {% if slick %}
+            </div>
+                <div class="d-flex ai-center jc-center pos-relative slick-utils">
+                    <div class="pos-absolute w-100 h-100 d-flex jc-space-between slick-arrows"></div>
+                    {% if show_count %}
+                        <div class="slick-count">
+                            <span class="current">1</span><span class="divider"> of </span><span class="total"></span>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endif %}
+
+        </div>
+
+    {% else %}
+
+        {% for item in items %}
+
+            {% set element = 'div' %}
+            {% if item.element %}
+                {% set element = item.element %}
+            {% endif %}
+
+            <{{ element }}{{ attributes.addClass(classes, 'field__item') }}
+                {% if aspect_ratio %} style="aspect-ratio: unset !important; padding-bottom: {{ aspect_ratio * 100 }}%;"{% endif %}
+            >
+
+            {% if item.url %}
+
+                <a {{ attributes.addClass(classes, 'field__item') }} href="{{ item.url }}" {% if item.target %}target="{{ item.target }}"{% endif %}>
+                    {{ item.content }}
+                </a>
+
+            {% else %}
+
+                {% if item.content_override %}
+                    {{ item.content_override }}
+                {% elseif markup %}
+                    {{ markup|raw }}
+                {% else %}
+                    {{ item.content|raw }}
+                {% endif %}
+
+            {% endif %}
+
+            </{{ element }}>
+
+        {% endfor %}
+
+    {% endif %}
+
+{% else %}
+
+    <div{{ attributes.addClass(classes) }}>
+
+        {% if not label_elem %}
+            {% set label_elem = 'h4' %}
+        {% endif %}
+
+        <{{ label_elem }}{{ title_attributes.addClass(title_classes) }}>{{ label }}</{{ label_elem }}>
+
+        {% if multiple %}
+            <div class="field__items {{ items_classes }}">
+        {% endif %}
+
+            {% for item in items %}
+
+                {%
+                    set classes = [
+                    'field__item'
+                ]
+                %}
+                {% if item.extra_classes %}
+                    {% set classes = classes|merge(item.extra_classes) %}
+                {% endif %}
+
+                {% if item.url %}
+                    <a {{ item.attributes.addClass(classes) }} href="{{ item.url }}" {% if item.target %}target="{{ item.target }}"{% endif %}>
+                        {{ item.content }}
+                    </a>
+
+                {% elseif item.content_override %}
+                    <div{{ item.attributes.addClass(classes) }}>
+                        {{ item.content_override }}
+                    </div>
+
+                {% else %}
+                    <div{{ item.attributes.addClass(classes) }}>
+                        {{ item.content }}
+                    </div>
+
+                {% endif %}
+
+            {% endfor %}
+
+        {% if multiple %}
+            </div>
+        {% endif %}
+
+    </div>
+
+{% endif %}

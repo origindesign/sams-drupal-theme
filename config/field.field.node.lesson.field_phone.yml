@@ -1,0 +1,21 @@
+uuid: 50e23174-9896-4ed6-80c9-9d49fc05b0eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_phone
+    - node.type.lesson
+_core:
+  default_config_hash: xrK89rhiZSEVJ6jOKu3HgvOtukrQ5EeIxakbfXyXALY
+id: node.lesson.field_phone
+field_name: field_phone
+entity_type: node
+bundle: lesson
+label: Phone
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

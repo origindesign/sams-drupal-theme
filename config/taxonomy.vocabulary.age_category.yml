@@ -1,0 +1,10 @@
+uuid: a64ec6bf-4b61-4408-acc0-34068f778643
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: KttqpThOWpbq6wk1Kf1UhTXRQeMDM757zE66UbTHsE0
+name: 'Age Category'
+vid: age_category
+description: ''
+weight: 0

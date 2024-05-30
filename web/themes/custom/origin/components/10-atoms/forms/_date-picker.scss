@@ -1,0 +1,121 @@
+
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button{
+    @include fontsize(12);
+}
+
+.ui-datepicker {
+    @include fontsize(12);
+    border:$border !important;
+    padding:0 10px 10px;
+    border-radius:0;
+    width:calc(100% - (#{$small-screen-padding} * 2)) !important;
+    max-width:320px;
+    z-index:20 !important;
+    transform:translateY(-2px);
+
+    td, th{
+        min-width:initial !important;
+    }
+
+    &.ui-datepicker-multi-2{
+        width:600px !important;
+        max-width:none;
+        &:before{
+            @include pseudo();
+            background:$color--border; left:50%; height:100%; width:1px; transform:translateX(-50%);
+        }
+    }
+
+    &.ui-datepicker-inline{
+        width:100% !important;
+        max-width:none;
+    }
+
+    .ui-datepicker-title,
+    .ui-datepicker-title select{
+        text-transform:uppercase;
+    }
+    .ui-datepicker-title{
+        @include fontsize(12);
+        text-transform:uppercase; height:25px; line-height:25px;
+        span{
+            color:$color--text;
+        }
+        select{
+            @include fontsize(12);
+            padding:5px; height:auto; display:inline; margin:0 3px; line-height:1; border:$border;
+        }
+    }
+
+    .ui-widget-header{ background:none; border:none; border-radius:0; padding:10px; }
+    .ui-datepicker-group-first{ padding-right:5px; }
+    .ui-datepicker-group-last{ padding-left:5px; }
+    &.ui-datepicker-multi .ui-datepicker-group table{ width:100%}
+
+    .ui-state-default,
+    .ui-widget-content .ui-state-default,
+    .ui-widget-header .ui-state-default{ background:none}
+
+    .ui-datepicker-prev span,
+    .ui-datepicker-next span{ margin:0}
+
+    .ui-state-hover{ background:$color--border; }
+    .ui-state-default{ padding:5px; text-align:center; border:none !important;
+        &.ui-state-hover{ border-color:$color--border; }
+    }
+    .ui-datepicker-today a{ background:$color--background; color: $color--text; }
+    .ui-datepicker-current-day a{ background:$color--secondary !important; color:#fff; font-weight: bold; }
+
+    .ui-icon{ cursor:pointer;}
+    .ui-datepicker-prev,
+    .ui-datepicker-next{
+        width:40px; height:50px;
+        span{
+            @include cover();
+        }
+    }
+    .ui-datepicker-prev,
+    .ui-datepicker-prev-hover{ left:0; top:0; background:none !important;}
+    .ui-datepicker-next,
+    .ui-datepicker-next-hover{ right:0; top:0; background:none !important;}
+    .ui-datepicker-prev,
+    .ui-datepicker-next{
+        &.ui-state-hover{ border:none;    }
+    }
+    .ui-icon-circle-triangle-w,
+    .ui-icon-circle-triangle-e{ top:18px}
+    .ui-icon.ui-icon-circle-triangle-w,
+    .ui-icon.ui-icon-circle-triangle-e{
+        @include fonticonSetup();
+        @include fonticon('\e906', 10px,$color--secondary,50%,50%,auto,auto,true,true);
+        background:none;
+    }
+    .ui-icon.ui-icon-circle-triangle-w{
+        &:before{
+            content:'\e906';
+        }
+    }
+    .ui-icon.ui-icon-circle-triangle-w:before,
+    .ui-icon.ui-icon-circle-triangle-e:before{ position:absolute; text-indent:0; line-height:1; font-weight:normal;}
+
+    table{
+        @include fontsize(12);
+        margin:0;
+        tr{
+            border:none !important; background:none !important;
+        }
+        thead th{
+            @include fontsize(12);
+            text-transform:uppercase; color:$color--text;
+        }
+        tbody{
+            td{
+                padding:1px !important;
+            }
+        }
+        th, td{
+            width:14.28%; border:none !important; background:none !important;
+        }
+    }
+
+}

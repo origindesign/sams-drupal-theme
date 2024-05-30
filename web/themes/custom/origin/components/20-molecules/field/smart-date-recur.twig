@@ -1,0 +1,49 @@
+<div class="reset recurring-output--wrapper">
+
+    <div class="next_instance">
+        {{ next_display }}
+    </div>
+
+    {# <div class="rule-text">{{ rule_text }}</div>  #}
+
+    {% if past_display %}
+        <details>
+            <summary>{{ 'Recent'|t }}</summary>
+            <div class="details-wrapper">
+                {{ past_display }}
+            </div>
+        </details>
+    {% endif %}
+
+    {% if upcoming_display and upcoming_display['#items'] %}
+
+        {{ attach_library('origin/accordion') }}
+
+        <div class="accordion">
+
+            <h4 class="accordion-heading">
+                <button class="bg-none border-none" id="recur-header" aria-expanded="false" aria-controls="recurs">
+                    {{ 'Upcoming Dates'|t }}
+                </button>
+            </h4>
+
+            <div class="d-none accordion-content" aria-hidden="true" role="region" id="recurs" aria-labelledby="recur-header">
+
+                {{ upcoming_display }}
+
+                {% if upcoming_display['#items']|length >= 9 %}
+                    <p class="t-mice-type">
+                        (Showing max 10 occurrences)
+                    </p>
+                {% endif %}
+
+            </div>
+
+        </div>
+    {% endif %}
+
+    {% if not next_display %}
+        This event has no more occurrences
+    {% endif %}
+
+</div>

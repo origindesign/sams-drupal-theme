@@ -1,0 +1,19 @@
+uuid: 9d72c3c6-2ba9-4fff-a03c-0c8c7f5c2da8
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+_core:
+  default_config_hash: K8OOYxl0meX83dQUQlhWkS9OA4h861OgChb3rT4sLW4
+name: 'Lift & Trail'
+type: lift_trail
+description: 'Use <em>Lift & Trail</em> content to create a new lift, trail or Park that will be added to the Lifts & Trails status page.'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

@@ -1,0 +1,24 @@
+uuid: 162d8e55-ef1f-45bd-8fcb-c123ebfee7f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_order_weight
+    - node.type.activity
+  module:
+    - weight
+id: node.activity.field_order_weight
+field_name: field_order_weight
+entity_type: node
+bundle: activity
+label: 'Order Weight'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: '0'
+default_value_callback: ''
+settings:
+  range: '200'
+field_type: weight

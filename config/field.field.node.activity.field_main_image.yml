@@ -1,0 +1,30 @@
+uuid: bbae441b-1f73-4177-83fa-e50eb1a8bf97
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_main_image
+    - media.type.image
+    - node.type.activity
+_core:
+  default_config_hash: _WWfdnh-cw175L5_Jp-sUigoUNPk1tkXQLzpbahAXLY
+id: node.activity.field_main_image
+field_name: field_main_image
+entity_type: node
+bundle: activity
+label: 'Main Image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

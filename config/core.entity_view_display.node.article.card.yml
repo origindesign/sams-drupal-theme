@@ -1,0 +1,66 @@
+uuid: 900fcf46-3086-451d-831a-6fe1c4a4226f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - field.field.node.article.body
+    - field.field.node.article.field_category
+    - field.field.node.article.field_main_image
+    - field.field.node.article.field_metatags
+    - field.field.node.article.field_paragraphs
+    - field.field.node.article.field_related_content
+    - field.field.node.article.field_related_content_heading
+    - field.field.node.article.field_subtitle
+    - node.type.article
+  module:
+    - smart_trim
+    - user
+_core:
+  default_config_hash: lD9TZ8SS2160N_xaj7_vXyAFIjACWY_6eZNhFElCxQA
+id: node.article.card
+targetEntityType: node
+bundle: article
+mode: card
+content:
+  body:
+    type: smart_trim
+    label: hidden
+    settings:
+      trim_length: 250
+      trim_type: chars
+      trim_suffix: ...
+      wrap_output: false
+      wrap_class: trimmed
+      more:
+        display_link: false
+        target_blank: false
+        link_trim_only: false
+        class: more-link
+        text: More
+        aria_label: 'Read more about [node:title]'
+      summary_handler: full
+      trim_options:
+        text: true
+        trim_zero: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_main_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_category: true
+  field_email: true
+  field_metatags: true
+  field_paragraphs: true
+  field_related_content: true
+  field_related_content_heading: true
+  field_subtitle: true
+  links: true

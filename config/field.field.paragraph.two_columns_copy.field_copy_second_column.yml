@@ -1,0 +1,26 @@
+uuid: 59916c42-b8af-4aa2-8e2e-cc426e54af15
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_copy_second_column
+    - filter.format.basic_html
+    - paragraphs.paragraphs_type.two_columns_copy
+  module:
+    - text
+_core:
+  default_config_hash: 9noO67_wi2pjG0Z16cEMZfq-WdP425QFUr0f1fCxltY
+id: paragraph.two_columns_copy.field_copy_second_column
+field_name: field_copy_second_column
+entity_type: paragraph
+bundle: two_columns_copy
+label: 'Copy Second Column'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text_long

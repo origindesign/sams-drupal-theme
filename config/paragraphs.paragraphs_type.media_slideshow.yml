@@ -1,0 +1,17 @@
+uuid: c8109ffb-a042-4100-bbf6-e9e580a0ff94
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs_library
+third_party_settings:
+  paragraphs_library:
+    allow_library_conversion: true
+_core:
+  default_config_hash: em6_P0TU_wVTef48i36zcaWY0U6BZ4nresuwlje1Ems
+id: media_slideshow
+label: 'Media Carousel'
+icon_uuid: null
+icon_default: null
+description: 'Single or multiple media items (Images or Video)'
+behavior_plugins: {  }

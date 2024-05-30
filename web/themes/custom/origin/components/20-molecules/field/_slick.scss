@@ -1,0 +1,57 @@
+
+.slick-carousel{
+    --slick-button-height: 4rem;
+}
+
+.slick-utils{
+    height: var(--slick-button-height); width: calc(var(--slick-button-height) * 4);
+}
+
+.slick-arrow{
+    @include transitions();
+    position:absolute; z-index:1; opacity:1 !important; width:var(--slick-button-height); height:var(--slick-button-height); transform:translateY(-50%); top:50% !important; outline-offset: $outline-offset;
+
+    &.slick-prev{
+        left:0;
+        @include hover(){
+            .slick-prev-icon:before{
+                transform:translateX(-0.5rem);
+            }
+        }
+    }
+    &.slick-next{
+        right:0;
+        @include hover(){
+            .slick-next-icon:before{
+                transform:translateX(0.5rem);
+            }
+        }
+    }
+    span{
+        @include fonticonSetup();
+        @include fonticon($icon--right,2.5rem,$color--primary,50%,50%,0,auto,true,true);
+        opacity: 1 !important; width: var(--slick-button-height); height: var(--slick-button-height);
+        &:before{
+            top: 0; left: 0; transform: none;
+        }
+        &.slick-next-icon{
+            &:before{
+                content: $icon--right;
+            }
+        }
+        &.slick-prev-icon{
+            &:before{
+                content: $icon--left;
+            }
+        }
+    }
+
+    &.slick-disabled{
+        opacity:0;
+    }
+
+    &:focus{
+        outline: #{$outline} $color--primary !important;
+    }
+
+}

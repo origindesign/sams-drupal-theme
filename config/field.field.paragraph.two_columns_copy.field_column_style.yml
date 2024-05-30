@@ -1,0 +1,25 @@
+uuid: 97095f8f-4adc-44ac-87ca-bcebde8763ff
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_column_style
+    - paragraphs.paragraphs_type.two_columns_copy
+  module:
+    - options
+_core:
+  default_config_hash: eWY7MqdjNsIebJojtF7Unc-6nsQEZ0OrCgrH6HTuAGQ
+id: paragraph.two_columns_copy.field_column_style
+field_name: field_column_style
+entity_type: paragraph
+bundle: two_columns_copy
+label: 'Column Style'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: columns-even
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,24 @@
+uuid: 14f65290-a169-4d8c-9903-65abce3520c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.lesson
+_core:
+  default_config_hash: ZXpU3vbjZunnvejFR1b3uftI-g5uSpw9D4CXJfaVE6E
+id: node.lesson.promote
+field_name: promote
+entity_type: node
+bundle: lesson
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,19 @@
+uuid: 47584f85-4ff8-4081-a008-85ce23aaa3f1
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+_core:
+  default_config_hash: dxPAsDH-1GAK4U9lNiSfo3uvLmrWKH4jp6HAjXSF-eU
+name: Activity
+type: activity
+description: 'Use <em>Activities</em> for your "Things to Do" content.'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

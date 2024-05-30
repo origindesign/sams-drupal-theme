@@ -1,0 +1,15 @@
+uuid: 06d75a76-76c4-4a22-8328-6fc1e19b797f
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs_library
+third_party_settings:
+  paragraphs_library:
+    allow_library_conversion: true
+id: content_teasers
+label: 'Content Teasers'
+icon_uuid: null
+icon_default: null
+description: "A referenced list of existing content to be displayed using the 'teaser' layout"
+behavior_plugins: {  }

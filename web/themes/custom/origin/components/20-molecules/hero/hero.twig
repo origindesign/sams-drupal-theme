@@ -1,0 +1,25 @@
+
+{% set extra_class = ( has_hero_image ) ? "with-image" : "no-image" %}
+
+
+<div class="hero {{ extra_class }} ">
+
+    {% if has_hero_image %}
+
+        <h1>{{ label|field_value }}</h1>
+        {% if content.field_subtitle|render %}
+            <h2>{{ content.field_subtitle|field_value }}</h2>
+        {% endif %}
+
+        {{ content.field_main_image }}
+
+    {% else %}
+
+        <h1>{{ label|field_value }}</h1>
+        {% if content.field_subtitle|render %}
+            <h2>{{ content.field_subtitle|field_value }}</h2>
+        {% endif %}
+
+    {% endif %}
+
+</div>

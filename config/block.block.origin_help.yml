@@ -1,0 +1,22 @@
+uuid: 3002838f-50ce-466f-96b2-a75f6dcfb9b3
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - origin
+_core:
+  default_config_hash: cftP1OS7EQay5YizEQIfpXLq4F6AQqqpGyC91rmcOEs
+id: origin_help
+theme: origin
+region: content
+weight: -5
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

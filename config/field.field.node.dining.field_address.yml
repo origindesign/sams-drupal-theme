@@ -1,0 +1,40 @@
+uuid: 1691e9f1-5237-48f9-8f0a-e751126ab16d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_address
+    - node.type.dining
+  module:
+    - address
+_core:
+  default_config_hash: 2zLOEQXE60S4X0yGGdbcqIv61typyXSX1mt2B8AqC4c
+id: node.dining.field_address
+field_name: field_address
+entity_type: node
+bundle: dining
+label: Address
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_countries:
+    CA: CA
+    US: US
+  langcode_override: ''
+  field_overrides: {  }
+  fields:
+    administrativeArea: administrativeArea
+    locality: locality
+    postalCode: postalCode
+    addressLine1: addressLine1
+    addressLine2: addressLine2
+    dependentLocality: '0'
+    sortingCode: '0'
+    organization: '0'
+    givenName: '0'
+    additionalName: '0'
+    familyName: '0'
+field_type: address

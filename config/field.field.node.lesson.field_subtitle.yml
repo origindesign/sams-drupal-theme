@@ -1,0 +1,21 @@
+uuid: 54844d20-0c4e-4fc2-8f9b-66da3195a59c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_subtitle
+    - node.type.lesson
+_core:
+  default_config_hash: Q4oqwk_uf8e7wgz_JzmtbYDSRavQNG6jPawXSR98pig
+id: node.lesson.field_subtitle
+field_name: field_subtitle
+entity_type: node
+bundle: lesson
+label: Subtitle
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

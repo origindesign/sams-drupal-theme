@@ -1,0 +1,30 @@
+
+.menu--main{
+
+    > ul.menu{
+        > li{
+            position: relative;
+            &:hover{
+                > ul{
+                    display: block;
+                }
+            }
+            a, button{
+                padding: 1em;
+            }
+        }
+        ul{
+            display: none; position: absolute; top: 100%; left: 0; width: 30ch; background: $color--background; z-index: 999;
+            a{
+                padding: 0.5em 1em;
+            }
+        }
+    }
+
+}
+
+.menu--footer {
+    li {
+        padding-right: 1em;
+    }
+}

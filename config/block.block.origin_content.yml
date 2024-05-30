@@ -1,0 +1,22 @@
+uuid: 87309153-e2d2-406d-b9d7-bd8fcb9b5741
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - origin
+_core:
+  default_config_hash: B_J_8TXzHkT64yqLnZKdT_hxex96D9_ZbdXwn8AavIk
+id: origin_content
+theme: origin
+region: content
+weight: -2
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

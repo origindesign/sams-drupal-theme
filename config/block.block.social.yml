@@ -1,0 +1,31 @@
+uuid: 463121ca-6f4b-4f34-ada0-41b401236828
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.social
+  module:
+    - menu_block
+  theme:
+    - origin
+id: social
+theme: origin
+region: disabled
+weight: 0
+provider: null
+plugin: 'menu_block:social'
+settings:
+  id: 'menu_block:social'
+  label: Social
+  label_display: '0'
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 1
+  expand_all_items: false
+  parent: 'social:'
+  suggestion: social
+visibility: {  }

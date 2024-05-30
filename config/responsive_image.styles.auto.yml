@@ -1,0 +1,35 @@
+uuid: f2899c86-24e9-4cd6-a961-0865a8e0c8de
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.scale_1024
+    - image.style.scale_1280
+    - image.style.scale_1440
+    - image.style.scale_1920
+    - image.style.scale_320
+    - image.style.scale_480
+    - image.style.scale_640
+    - image.style.scale_800
+  theme:
+    - origin
+id: auto
+label: Auto
+image_style_mappings:
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: auto
+      sizes_image_styles:
+        - scale_1024
+        - scale_1280
+        - scale_1440
+        - scale_1920
+        - scale_320
+        - scale_480
+        - scale_640
+        - scale_800
+    breakpoint_id: origin.small
+    multiplier: 1x
+breakpoint_group: origin
+fallback_image_style: scale_1440

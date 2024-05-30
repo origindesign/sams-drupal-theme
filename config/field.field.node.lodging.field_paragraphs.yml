@@ -1,0 +1,63 @@
+uuid: eaabf0bf-64a3-47ed-b68d-73846afc6e21
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraphs
+    - node.type.lodging
+    - paragraphs.paragraphs_type.card
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: QLqc5I4C2qm1OMFAi0bkFafjmRJ8G68p-APLCwe2L40
+id: node.lodging.field_paragraphs
+field_name: field_paragraphs
+entity_type: node
+bundle: lodging
+label: 'Page Content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      card: card
+    negate: 1
+    target_bundles_drag_drop:
+      card:
+        weight: -13
+        enabled: true
+      content_cards:
+        weight: -18
+        enabled: false
+      content_teasers:
+        weight: -17
+        enabled: false
+      custom_cards:
+        weight: -19
+        enabled: false
+      form:
+        weight: -15
+        enabled: false
+      from_library:
+        weight: -14
+        enabled: false
+      image_aside_copy:
+        weight: -21
+        enabled: false
+      media_slideshow:
+        weight: -20
+        enabled: false
+      quote:
+        weight: -16
+        enabled: false
+      single_column_copy:
+        weight: -23
+        enabled: false
+      two_columns_copy:
+        weight: -22
+        enabled: false
+field_type: entity_reference_revisions

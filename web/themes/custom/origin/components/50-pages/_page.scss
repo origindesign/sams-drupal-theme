@@ -1,0 +1,16 @@
+
+a.skip-link{
+    left: -999em; top: 1em; z-index:9999; transition-property: opacity !important;
+
+    &:focus{
+        left:50% !important; opacity:1;
+    }
+}
+
+.layout-container{
+    min-height:100vh;
+}
+
+.main-content{
+    flex: 1;
+}

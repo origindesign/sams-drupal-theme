@@ -1,0 +1,17 @@
+uuid: c08bca43-fffb-45bf-80e4-b8d2d51e57e2
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs_library
+third_party_settings:
+  paragraphs_library:
+    allow_library_conversion: true
+_core:
+  default_config_hash: uevrWhB-n1qUpjIa-8ej3_uq1l-B3nhaQ-MSULqMZYA
+id: single_column_copy
+label: 'Single Column Copy'
+icon_uuid: null
+icon_default: null
+description: 'A single column of copy with a heading'
+behavior_plugins: {  }

@@ -1,0 +1,32 @@
+uuid: aebc844d-6d93-4961-a0fb-29d56f71ba13
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.inline
+    - field.field.media.file.field_media_file
+    - field.field.media.file.field_tags
+    - media.type.file
+  module:
+    - file
+_core:
+  default_config_hash: GBwiKmpH4OAWHAnf-Tiv8ZEsz63V6WSb6jW0ZB4ITGg
+id: media.file.inline
+targetEntityType: media
+bundle: file
+mode: inline
+content:
+  field_media_file:
+    type: file_default
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_tags: true
+  name: true
+  thumbnail: true
+  uid: true

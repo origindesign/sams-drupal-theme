@@ -1,0 +1,31 @@
+uuid: 2eae4b38-7aab-4f3d-9104-7d97a9ef2204
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_tags
+    - media.type.inline_image
+    - taxonomy.vocabulary.tags
+_core:
+  default_config_hash: AdfPAUV0s0lphEgYdjpYYpWF8IpTlSzTJgva6FZ1JR4
+id: media.inline_image.field_tags
+field_name: field_tags
+entity_type: media
+bundle: inline_image
+label: Tags
+description: 'Use to make media easily searchable within the media browser'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tags: tags
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

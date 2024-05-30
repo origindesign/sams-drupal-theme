@@ -1,0 +1,82 @@
+{#
+/**
+ * @file
+ * Theme override to display all the fields in a row.
+ *
+ * Available variables:
+ * - view: The view in use.
+ * - fields: A list of fields, each one contains:
+ *   - content: The output of the fields.
+ *   - raw: The raw data for the field, if it exists. This is NOT output safe.
+ *   - class: The safe class ID to use.
+ *   - handler: The Views field handler controlling this fields.
+ *   - inline: Whether or not the field should be inline.
+ *   - wrapper_element: An HTML element for a wrapper.
+ *   - wrapper_attributes: List of attributes for wrapper element.
+ *   - separator: An optional separator that may appear before a fields.
+ *   - label: The field's label text.
+ *   - label_element: An HTML element for a label wrapper.
+ *   - label_attributes: List of attributes for label wrapper.
+ *   - label_suffix: Colon after the label.
+ *   - element_type: An HTML element for the field content.
+ *   - element_attributes: List of attributes for HTML element for field content.
+ *   - has_label_colon: A boolean indicating whether to display a colon after
+ *     the label.
+ *   - element_type: An HTML element for the field content.
+ *   - element_attributes: List of attributes for HTML element for field content.
+ * - row: The raw result from the query, with all data it fetched.
+ *
+ * @see template_preprocess_views_view_fields()
+ */
+#}
+
+{# kint(fields) #}
+
+{% set start_day = fields.field_date_recur_value.content %}
+{% set start_month = fields.field_date_recur_value_1.content %}
+{% set end_day = fields.field_date_recur_end_value.content %}
+{% set end_month = fields.field_date_recur_end_value_1.content %}
+
+
+<div class="t-align-center date-detail">
+    <span class="date">
+        {% if start_month == end_month %}
+            <span class="month">{{ start_month }}</span>
+            {% if start_day == end_day %}
+                <span class="day">{{ start_day }}</span>
+            {% else %}
+                <span class="day">{{ start_day }}</span>
+                -
+                <span class="day">{{ end_day }}</span>
+            {% endif %}
+        {% else %}
+            <span>
+                <span class="month">{{ start_month }}</span>
+                <span class="day">{{ start_day }}</span>
+            </span>
+            <span class="to">-</span>
+            <span>
+                <span class="month">{{ end_month }}</span>
+                <span class="day">{{ end_day }}</span>
+            </span>
+        {% endif %}
+    </span>
+</div>
+
+<div class="copy">
+    <h3>
+        <a href="{{ fields.view_node.content }}">{{ fields.title.content }}</a>
+    </h3>
+    <strong class="d-block time">
+        {{ fields.field_date_recur.content }}
+    </strong>
+    <div>
+        {{ fields.body.content }}
+    </div>
+    <p>
+        <a href="{{ fields.view_node.content }}" class="button" tabindex="-1" aria-hidden="true">
+            Read more
+            <span class="visually-hidden">: {{ fields.title.content }}</span>
+        </a>
+    </p>
+</div>

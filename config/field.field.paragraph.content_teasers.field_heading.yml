@@ -1,0 +1,19 @@
+uuid: 1a83b790-ed02-4453-9d0d-c63f66a30ea3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_heading
+    - paragraphs.paragraphs_type.content_teasers
+id: paragraph.content_teasers.field_heading
+field_name: field_heading
+entity_type: paragraph
+bundle: content_teasers
+label: Heading
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

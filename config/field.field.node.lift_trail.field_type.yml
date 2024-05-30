@@ -1,0 +1,31 @@
+uuid: 4a8a4ae3-1f2f-4e45-8ad1-6fe57d23146f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_type
+    - node.type.lift_trail
+    - taxonomy.vocabulary.lifts_trails_type
+_core:
+  default_config_hash: NHykUXzWZuNu2aLxwHWNia3GvEfJs7nlnILmfeSugok
+id: node.lift_trail.field_type
+field_name: field_type
+entity_type: node
+bundle: lift_trail
+label: Type
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      lifts_trails_type: lifts_trails_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

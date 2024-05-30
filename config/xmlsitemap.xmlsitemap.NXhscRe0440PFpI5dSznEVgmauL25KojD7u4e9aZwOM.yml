@@ -1,0 +1,7 @@
+uuid: 70cd5d6b-c653-4110-8ae4-c44adc63331e
+langcode: en
+status: true
+dependencies: {  }
+id: NXhscRe0440PFpI5dSznEVgmauL25KojD7u4e9aZwOM
+label: 'http://origin-drop-8.docker.localhost:8000/'
+context: {  }

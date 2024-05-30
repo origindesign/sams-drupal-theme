@@ -1,0 +1,28 @@
+{%
+    set classes = [
+        'paragraph',
+        'paragraph--type--' ~ paragraph.bundle|clean_class,
+        view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+        not paragraph.isPublished() ? 'paragraph--unpublished',
+        'container '
+    ]
+%}
+
+{% block paragraph %}
+    <div{{ attributes.addClass(classes) }} id="paragraph-{{ paragraph.id() }}">
+        <div class="image-aside-copy {{ (content.field_image_alignment|render ? 'align--'~content.field_image_alignment[0]["#markup"]) }}">
+
+            <div class="fade-in image">
+                {{ content.field_image }}
+            </div>
+
+            <div class="fade-in copy">
+                <h2>
+                    {{ content.field_heading|field_value }}
+                </h2>
+                {{ content.field_copy_first_column }}
+            </div>
+
+        </div>
+    </div>
+{% endblock paragraph %}

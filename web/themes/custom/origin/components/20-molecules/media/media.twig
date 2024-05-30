@@ -1,0 +1,60 @@
+
+{%
+    set classes = [
+    'media',
+    'media--type-' ~ media.bundle()|clean_class,
+    not media.isPublished() ? 'media--unpublished',
+    view_mode ? 'media--view-mode-' ~ view_mode|clean_class
+]
+%}
+
+
+<article{{ attributes.addClass(classes) }}>
+    {{ title_suffix.contextual_links }}
+
+    {% if content %}
+
+        {% if media.bundle() == 'remote_video' %}
+
+            {{ attach_library('origin/video') }}
+
+            {% if content.field_media_image|render %}
+
+                <button class="d-block border-none w-100 f-icon outline-offset video-poster-frame">
+                    {{ content.field_media_image }}
+                    {{ content.field_media_oembed_video }}
+                </button>
+                {{ content.field_caption }}
+
+            {% else %}
+
+                {{ content }}
+
+            {% endif %}
+
+        {% elseif media.bundle() == 'video' and view_mode == 'url' %}
+
+            {% include "@atoms/images/video.twig" with{
+                'url': content.field_media_video_file|field_value,
+                'poster': content.field_poster|field_value
+            } %}
+
+        {% else %}
+
+            {% if content.field_link|render %}
+                <a href="{{ content.field_link[0]["#url"] }}" target="_blank">
+            {% endif %}
+
+                {{ content|without(
+                    'field_link'
+                )}}
+
+            {% if content.field_link|render %}
+                </a>
+            {% endif %}
+
+        {% endif %}
+
+    {% endif %}
+
+</article>

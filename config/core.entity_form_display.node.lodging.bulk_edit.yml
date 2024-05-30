@@ -1,0 +1,104 @@
+uuid: 6e5ff0a5-1ea1-4af2-9577-bbb41b2ef747
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.node.bulk_edit
+    - field.field.node.lodging.body
+    - field.field.node.lodging.field_address
+    - field.field.node.lodging.field_category
+    - field.field.node.lodging.field_email
+    - field.field.node.lodging.field_google_map_embed
+    - field.field.node.lodging.field_main_image
+    - field.field.node.lodging.field_metatags
+    - field.field.node.lodging.field_order_weight
+    - field.field.node.lodging.field_other_information
+    - field.field.node.lodging.field_paragraphs
+    - field.field.node.lodging.field_phone
+    - field.field.node.lodging.field_related_content
+    - field.field.node.lodging.field_related_content_heading
+    - field.field.node.lodging.field_subtitle
+    - field.field.node.lodging.field_website
+    - node.type.lodging
+  module:
+    - path
+id: node.lodging.bulk_edit
+targetEntityType: node
+bundle: lodging
+mode: bulk_edit
+content:
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 15
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 120
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 16
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 50
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  body: true
+  field_address: true
+  field_category: true
+  field_email: true
+  field_google_map_embed: true
+  field_main_image: true
+  field_metatags: true
+  field_order_weight: true
+  field_other_information: true
+  field_paragraphs: true
+  field_phone: true
+  field_related_content: true
+  field_related_content_heading: true
+  field_subtitle: true
+  field_website: true
+  publish_on: true
+  scheduler_settings: true
+  unpublish_on: true

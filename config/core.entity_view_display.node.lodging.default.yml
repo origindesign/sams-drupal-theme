@@ -1,0 +1,151 @@
+uuid: d6a070c2-9e99-43bb-8ab1-d8c322e6ad44
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.lodging.body
+    - field.field.node.lodging.field_address
+    - field.field.node.lodging.field_category
+    - field.field.node.lodging.field_email
+    - field.field.node.lodging.field_google_map_embed
+    - field.field.node.lodging.field_main_image
+    - field.field.node.lodging.field_metatags
+    - field.field.node.lodging.field_order_weight
+    - field.field.node.lodging.field_other_information
+    - field.field.node.lodging.field_paragraphs
+    - field.field.node.lodging.field_phone
+    - field.field.node.lodging.field_related_content
+    - field.field.node.lodging.field_related_content_heading
+    - field.field.node.lodging.field_subtitle
+    - field.field.node.lodging.field_website
+    - node.type.lodging
+  module:
+    - address
+    - entity_reference_revisions
+    - link
+    - metatag
+    - text
+    - user
+_core:
+  default_config_hash: hF5fTK9_z0OuuPUl9eSVWz06yn7odFY4LkMvqfr7RsU
+id: node.lodging.default
+targetEntityType: node
+bundle: lodging
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_address:
+    type: address_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_category:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_email:
+    type: email_mailto
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_google_map_embed:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_main_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_metatags:
+    type: metatag_empty_formatter
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 13
+    region: content
+  field_other_information:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_paragraphs:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_phone:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_related_content:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: card
+      link: false
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  field_related_content_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  field_subtitle:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_website:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: _blank
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden:
+  field_order_weight: true
+  links: true

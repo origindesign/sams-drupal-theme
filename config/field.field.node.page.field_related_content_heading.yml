@@ -1,0 +1,21 @@
+uuid: 0775b40f-f52d-4e2a-8875-d52f83669a1a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_content_heading
+    - node.type.page
+id: node.page.field_related_content_heading
+field_name: field_related_content_heading
+entity_type: node
+bundle: page
+label: 'Related Content Heading'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 'Related Content'
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,58 @@
+
+// Measurements
+$container-max-width: 1400px;
+$small-screen-padding: 10vw;
+$medium-screen-padding: 6.5vw;
+$large-screen-padding: calc((100vw - #{$container-max-width})/ 2);
+$header-height-small: 8rem;
+$header-height: 10rem;
+$admin-bar: 39px;
+$admin-bar-open: 79px;
+
+// Breakpoint will output fallback selectors in this stylesheet
+@include breakpoint-set("no query fallbacks", true);
+
+// Sign posts
+$width-small: 360px;
+$width-tablet-portrait: 740px;
+$width-tablet-landscape: 960px;
+$width-laptop: 1200px;
+$width-large: $container-max-width;
+$width-xlarge: 1600px;
+
+$width-large-layout: $width-tablet-landscape;
+$width-condensed-layout: $width-large-layout - 1px;
+
+// Mobile-first queries
+$bp--tiny: 1px $width-small - 1px;
+$bp--small: $width-small;
+$bp--phone: 1px $width-tablet-portrait - 1px;
+$bp--tablet-portrait: $width-tablet-portrait;
+$bp--tablet-portrait-only: $width-tablet-portrait $width-condensed-layout;
+$bp--tablet-landscape: $width-tablet-landscape;
+$bp--tablet-landscape-only: $width-tablet-landscape $width-large - 1px;
+$bp--laptop: $width-laptop;
+$bp--large: $width-large;
+$bp--xlarge: $width-xlarge;
+
+$bp--typography: $width-tablet-portrait;
+$bp--condensed-layout: 1px $width-condensed-layout;
+$bp--large-layout: $width-large-layout;
+
+// Basic layout
+$row-spacing-small: 4em;
+$row-spacing-medium: 5.5em;
+$row-spacing: 7em;
+$column-gap-small: 3.125%;
+$column-gap-medium: 2.183%;
+$column-gap: 2.183%;
+$row-gap: 2em;
+
+// Interface
+$outline-offset: 2px;
+$outline:2px dotted;
+$border:1px solid $color--border;
+
+// Images
+$base-image-padding: 0.5625;
+$widescreen-image-padding: 0.5625;

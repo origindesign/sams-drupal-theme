@@ -1,0 +1,41 @@
+{%
+    set classes = [
+        'paragraph',
+        'paragraph--type--' ~ paragraph.bundle|clean_class,
+        view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+        not paragraph.isPublished() ? 'paragraph--unpublished',
+        content.field_column_style|render ? 'column-style--'~content.field_column_style[0]["#markup"],
+        content.field_width|render ? 'width--'~content.field_width[0]["#markup"],
+        content.field_image_alignment|render ? 'align--'~content.field_image_alignment[0]["#markup"],
+        (content.field_accordion[0]["#markup"] == '1' ? 'accordion'),
+    ]
+%}
+
+
+{% if extra_classes %}
+    {% set classes = classes|merge(extra_classes) %}
+{% endif %}
+
+{% if slick %}
+    {{ attach_library('origin/slick') }}
+{% endif %}
+
+{% if content.field_accordion[0]["#markup"] == '1' %}
+    {{ attach_library('origin/accordion') }}
+{% endif %}
+
+
+{% block paragraph %}
+    <div{{ attributes.addClass(classes) }} id="paragraph-{{ paragraph.id() }}">
+
+        {% block content %}
+            {{ content|without(
+                'field_column_style',
+                'field_image_alignment',
+                'field_width',
+                'field_accordion',
+            )}}
+        {% endblock %}
+
+    </div>
+{% endblock paragraph %}

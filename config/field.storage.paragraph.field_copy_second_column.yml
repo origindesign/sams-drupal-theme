@@ -1,0 +1,21 @@
+uuid: 7a2a6280-0022-4218-b680-e908bd5d7ea2
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+_core:
+  default_config_hash: P-XVDm0TYO_oohTJ7iUZAn77ijVByrM_4UmlPIWlo6U
+id: paragraph.field_copy_second_column
+field_name: field_copy_second_column
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

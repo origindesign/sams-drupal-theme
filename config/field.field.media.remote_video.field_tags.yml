@@ -1,0 +1,31 @@
+uuid: 8ecf28e0-44ea-451a-9871-895bab3e7887
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_tags
+    - media.type.remote_video
+    - taxonomy.vocabulary.tags
+_core:
+  default_config_hash: h4slTAbTfjHAE2z_pGwoRpzlByOYL6LBw23seAbDX1o
+id: media.remote_video.field_tags
+field_name: field_tags
+entity_type: media
+bundle: remote_video
+label: Tags
+description: 'Use to make media easily searchable within the media library'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tags: tags
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

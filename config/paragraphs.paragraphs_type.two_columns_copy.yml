@@ -1,0 +1,17 @@
+uuid: 0d38b0fe-7cc6-43c1-a1cf-f17556c3ae77
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs_library
+third_party_settings:
+  paragraphs_library:
+    allow_library_conversion: true
+_core:
+  default_config_hash: 9YtXwzdCqHBNWX8MjTEu7sVyggeoxUNp8cVnw34GQMI
+id: two_columns_copy
+label: 'Two Columns Copy'
+icon_uuid: null
+icon_default: null
+description: 'Two columns of copy with a heading'
+behavior_plugins: {  }

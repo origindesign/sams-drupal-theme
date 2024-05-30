@@ -1,0 +1,23 @@
+uuid: da813782-a0af-4a53-896d-23c063ec7560
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_width
+    - paragraphs.paragraphs_type.single_column_copy
+  module:
+    - options
+id: paragraph.single_column_copy.field_width
+field_name: field_width
+entity_type: paragraph
+bundle: single_column_copy
+label: Width
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: normal
+default_value_callback: ''
+settings: {  }
+field_type: list_string

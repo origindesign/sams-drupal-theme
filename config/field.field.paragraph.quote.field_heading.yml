@@ -1,0 +1,19 @@
+uuid: cb7dc0d0-6ce7-48a7-8d94-9d40cbdb54bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_heading
+    - paragraphs.paragraphs_type.quote
+id: paragraph.quote.field_heading
+field_name: field_heading
+entity_type: paragraph
+bundle: quote
+label: Author
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

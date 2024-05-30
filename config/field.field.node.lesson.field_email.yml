@@ -1,0 +1,21 @@
+uuid: 998c33e1-3414-4b72-86e5-2d0e84a83514
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_email
+    - node.type.lesson
+_core:
+  default_config_hash: PaeGSvydr_6CrY4Nr09Pw3dW7-UVErzMz256wuIYOlA
+id: node.lesson.field_email
+field_name: field_email
+entity_type: node
+bundle: lesson
+label: Email
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

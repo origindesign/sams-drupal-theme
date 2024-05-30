@@ -1,0 +1,15 @@
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
+langcode: en
+uuid: 996d45f3-a747-4d9c-a20a-1b8e48e7b26b
+name: 'Origin Drop'
+mail: web@origindesign.ca
+slogan: ''
+page:
+  403: /node/33
+  404: /node/32
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: en
+mail_notification: ''

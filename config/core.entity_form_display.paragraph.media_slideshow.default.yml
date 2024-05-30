@@ -1,0 +1,41 @@
+uuid: 7900a977-45a3-4664-b5de-a7968f8793fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.media_slideshow.field_heading
+    - field.field.paragraph.media_slideshow.field_medias
+    - paragraphs.paragraphs_type.media_slideshow
+  module:
+    - media_library
+    - media_library_edit
+_core:
+  default_config_hash: oQ0ftnLiukNkdaPyzUTkZGnBOG78nBsK-Z9ChjZb5G8
+id: paragraph.media_slideshow.default
+targetEntityType: paragraph
+bundle: media_slideshow
+mode: default
+content:
+  field_heading:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_medias:
+    type: media_library_widget
+    weight: 2
+    region: content
+    settings:
+      media_types:
+        - image
+        - remote_video
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
+hidden:
+  created: true
+  status: true
+  uid: true

@@ -1,0 +1,12 @@
+
+<div class="row listing  {{ additional_classes }}">
+
+    {% if listing_heading %}
+        {{ listing_heading|raw }}
+    {% endif %}
+
+    <div class="content {{ content_classes }}">
+        {{ content }}
+    </div>
+
+</div>

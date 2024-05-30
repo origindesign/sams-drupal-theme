@@ -1,0 +1,21 @@
+uuid: 09459cd1-4118-405e-92d1-5922e61e5ba4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_content_heading
+    - node.type.dining
+id: node.dining.field_related_content_heading
+field_name: field_related_content_heading
+entity_type: node
+bundle: dining
+label: 'Related Content Heading'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 'Related Content'
+default_value_callback: ''
+settings: {  }
+field_type: string

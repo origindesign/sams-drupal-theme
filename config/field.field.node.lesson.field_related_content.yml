@@ -1,0 +1,27 @@
+uuid: b8829f5d-226d-470e-a351-a50e19ceae9f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_content
+    - node.type.lesson
+_core:
+  default_config_hash: LuG8NgE7NVqiotBC8qt3_CRqSHkRXGtKLmIrn4Omvic
+id: node.lesson.field_related_content
+field_name: field_related_content
+entity_type: node
+bundle: lesson
+label: 'Related Content'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: entity_references
+      display_name: related_content
+      arguments: {  }
+field_type: entity_reference

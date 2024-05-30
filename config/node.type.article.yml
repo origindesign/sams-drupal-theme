@@ -1,0 +1,19 @@
+uuid: ff3d1ace-5f6d-498a-9318-6d458a54e157
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+_core:
+  default_config_hash: AeW1SEDgb1OTQACAWGhzvMknMYAJlcZu0jljfeU3oso
+name: Article
+type: article
+description: 'Use <em>Articles</em> for creating blog posts.'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

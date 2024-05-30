@@ -1,0 +1,34 @@
+
+.sitemap{
+
+    div{
+
+        > ul{
+
+            > li{
+                &:not(:last-child){
+                    margin-bottom: 1em;
+                }
+
+                &.menu-item--expanded{
+                    > a{
+                        @include h3();
+                    }
+                }
+
+                ul{
+                    margin: 0.5em 0 0 1em !important;
+
+                    ul{
+                        margin-bottom: 1em !important;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}

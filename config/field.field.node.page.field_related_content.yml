@@ -1,0 +1,27 @@
+uuid: 24d55b14-9321-4eb3-8ca9-a686e1ac2456
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_content
+    - node.type.page
+_core:
+  default_config_hash: Clh3SuhuRBH7_pxbeKCjpmiHBSqmjVA5GKZF6qZjBBM
+id: node.page.field_related_content
+field_name: field_related_content
+entity_type: node
+bundle: page
+label: 'Related Content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: entity_references
+      display_name: related_content
+      arguments: {  }
+field_type: entity_reference

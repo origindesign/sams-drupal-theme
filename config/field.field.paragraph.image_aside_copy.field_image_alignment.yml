@@ -1,0 +1,25 @@
+uuid: 73a5af70-b5a8-4961-8c24-51039b4559a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image_alignment
+    - paragraphs.paragraphs_type.image_aside_copy
+  module:
+    - options
+_core:
+  default_config_hash: HkaiCFp0Wyac5P0fh8HmM95LLHvIWMA4KNGJFKsIPt0
+id: paragraph.image_aside_copy.field_image_alignment
+field_name: field_image_alignment
+entity_type: paragraph
+bundle: image_aside_copy
+label: 'Image Alignment'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: right
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,63 @@
+uuid: 97837668-5ada-448c-9fd3-98811ee46f4c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraphs
+    - node.type.event
+    - paragraphs.paragraphs_type.card
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: bkYgTSSIoXGi4OJzfYZwiPLeQa63E8ro30SuUcrT2PI
+id: node.event.field_paragraphs
+field_name: field_paragraphs
+entity_type: node
+bundle: event
+label: 'Page Content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      card: card
+    negate: 1
+    target_bundles_drag_drop:
+      card:
+        weight: -13
+        enabled: true
+      content_cards:
+        weight: -18
+        enabled: false
+      content_teasers:
+        weight: -17
+        enabled: false
+      custom_cards:
+        weight: -19
+        enabled: false
+      form:
+        weight: -15
+        enabled: false
+      from_library:
+        weight: -14
+        enabled: false
+      image_aside_copy:
+        weight: -21
+        enabled: false
+      media_slideshow:
+        weight: -20
+        enabled: false
+      quote:
+        weight: -16
+        enabled: false
+      single_column_copy:
+        weight: -23
+        enabled: false
+      two_columns_copy:
+        weight: -22
+        enabled: false
+field_type: entity_reference_revisions

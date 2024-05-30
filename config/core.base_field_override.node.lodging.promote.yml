@@ -1,0 +1,24 @@
+uuid: 4f55f60c-9e53-429b-b4b8-a7eed464e07a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.lodging
+_core:
+  default_config_hash: _DD-2vOqcxy9Ua8ECfXwrWF0UwYvo24cCn4KqvnlvKc
+id: node.lodging.promote
+field_name: promote
+entity_type: node
+bundle: lodging
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
