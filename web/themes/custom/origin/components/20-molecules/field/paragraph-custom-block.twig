@@ -1,0 +1,18 @@
+{%
+    set classes = [
+        'paragraph',
+        'paragraph--type--' ~ paragraph.bundle|clean_class,
+        view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+        not paragraph.isPublished() ? 'paragraph--unpublished',
+        'container another'
+    ]
+%}
+
+{% block paragraph %}
+    <div{{ attributes.addClass(classes) }} id="paragraph-{{ paragraph.id() }}">
+        <div class="custom-block">
+            <h2>{{ content.field_heading }}ss</h2>
+			{{ content.field_content|field_value }}
+        </div>
+    </div>
+{% endblock paragraph %}
